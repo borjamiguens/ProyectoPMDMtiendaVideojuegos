@@ -17,13 +17,13 @@ fun TextImageHorizontal(
     textMessage: String,
     image: Int
 ){
-    Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().clickable()){
-        Row(modifier = Modifier.fillMaxWidth().fillMaxHeight()){
-            Text(Texto)
+    // Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().clickable()){
+        // Row(modifier = Modifier.fillMaxWidth().fillMaxHeight()){
+    // Text(Texto)
         }
-    }
+    //}
 
-}
+//}
 
 @Preview
 @Composable

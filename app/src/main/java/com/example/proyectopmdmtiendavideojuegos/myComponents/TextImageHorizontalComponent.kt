@@ -2,24 +2,35 @@ package com.example.proyectopmdmtiendavideojuegos.myComponents
 
 import android.media.Image
 import android.os.Message
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.proyectopmdmtiendavideojuegos.R
 
 @Composable
 fun TextImageHorizontal(
     textMessage: String,
-    image: Int
+    imageIdR: Int,
+    action: () -> Unit
 ){
-    Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().clickable()){
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .background(Color.LightGray)
+        .clickable{ action.invoke() },
+    ){
         Row(modifier = Modifier.fillMaxWidth().fillMaxHeight()){
-            Text(Texto)
+            Text(textMessage)
+            painterResource(imageIdR, contentDescription = "")
         }
     }
 

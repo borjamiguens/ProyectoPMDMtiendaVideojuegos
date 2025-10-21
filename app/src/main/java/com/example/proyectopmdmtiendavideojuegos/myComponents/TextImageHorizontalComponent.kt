@@ -14,8 +14,8 @@ import com.example.proyectopmdmtiendavideojuegos.R
 
 @Composable
 fun TextImageHorizontal(
-    textMessage: Texto
-    image: Imagen
+    textMessage: String,
+    image: Int
 ){
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().clickable()){
         Row(modifier = Modifier.fillMaxWidth().fillMaxHeight()){

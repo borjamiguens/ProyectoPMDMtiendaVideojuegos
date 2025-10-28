@@ -121,6 +121,6 @@ fun ImageTextColumn (
 @Preview
 @Composable
 fun ImageTextColumnPreview () {
-    ImageTextColumn(txtTitle = "Título del juego", txtCategoria = "Terror", txtConsola = "PS5",R.drawable.a) { }
+    ImageTextColumn(txtTitle = "Título del juego", txtCategoria = "Terror", txtConsola = "PS5", imageIdR = R.drawable.a) { }
 
 }

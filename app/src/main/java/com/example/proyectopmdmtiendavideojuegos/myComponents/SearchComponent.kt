@@ -15,15 +15,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun Search(
     modifier: Modifier = Modifier,
-    action: () -> Unit
+    action: () -> Unit,
 ) {
 
     var query by remember { mutableStateOf("") }
 
     Row(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+            .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         OutlinedTextField(
@@ -31,7 +30,7 @@ fun Search(
             onValueChange = { query = it },
             label = { Text("Buscar") },
             singleLine = true,
-            modifier = Modifier.weight(1f)
+            modifier = Modifier,
         )
 
         Spacer(modifier = Modifier.width(15.dp))
@@ -41,7 +40,7 @@ fun Search(
             contentDescription = "Buscar",
             tint = Color.White,
             modifier = Modifier
-                .size(50.dp)
+                .size(30.dp)
                 .clickable { action.invoke() })
     }
 }
@@ -49,5 +48,5 @@ fun Search(
 @Preview
 @Composable
 fun SearchPreview() {
-    Search (action = {})
+    Search (action = {},)
 }

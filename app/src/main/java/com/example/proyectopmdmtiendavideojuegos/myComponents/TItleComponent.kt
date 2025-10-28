@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TitleText(
+fun Title(
     name: String,
     modifier: Modifier = Modifier,
     fontSize: TextUnit = 24.sp
@@ -28,6 +28,6 @@ fun TitleText(
 @Preview
 @Composable
 fun TextImagePreview () {
-    TitleText(name = "JUEGOS DESTACADOS")
+    Title(name = "JUEGOS DESTACADOS")
 }
 

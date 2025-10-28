@@ -3,8 +3,11 @@ package com.example.proyectopmdmtiendavideojuegos.myComponents
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,23 +31,22 @@ fun Logo(
 ) {
     Row(
         modifier = modifier
-            .clickable { action() }
-            .padding(horizontal = 8.dp, vertical = 4.dp),
+            .clickable { action() },
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
             painter = painterResource(id = logo),
             contentDescription = name,
-            modifier = Modifier
-                .fillMaxHeight()
-                .padding(end = 15.dp),
+            modifier = Modifier.size(60.dp),
             contentScale = ContentScale.Fit
         )
+
+        Spacer(modifier = Modifier.width(10.dp))
 
         Text(
             text = name,
             color = Color.White,
-            fontSize = 30.sp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis

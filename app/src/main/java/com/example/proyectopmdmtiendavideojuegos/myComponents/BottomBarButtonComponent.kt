@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -35,14 +36,16 @@ fun BottomBarButton(
         Image(
             painter = painterResource(id = image),
             contentDescription = "",
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier
+                .size(60.dp)
+                .padding(bottom = 8.dp)
         )
 
 
         Text(
             text = text,
             color = Color.White,
-            fontSize = 12.sp,
+            fontSize = 8.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             maxLines = 1,

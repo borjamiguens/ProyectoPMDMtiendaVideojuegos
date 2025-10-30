@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+
 @Composable
 fun Search(
     modifier: Modifier = Modifier,
@@ -21,66 +22,51 @@ fun Search(
 ) {
 
     var query by remember { mutableStateOf("") }
-Box (
-    modifier = Modifier.padding(top = 5.dp)
-        .fillMaxWidth()
-        .height(70.dp)
-    )
-{
-    Row(
+    Box(
         modifier = Modifier
-            .fillMaxWidth(),
-        //verticalAlignment = Alignment.CenterVertically,
-        //horizontalArrangement = Arrangement.Center
-    ) {
-        Box (
-            modifier = Modifier
-                .fillMaxWidth(0.75f)
-                .fillMaxHeight(1f)
-                .align(Alignment.CenterVertically)
-                //.weight(1f)
+            .padding(top = 5.dp)
+            .fillMaxWidth()
+            .size(70.dp),
+        contentAlignment = Alignment.Center
 
-        ){
+    )
+    {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+        ) {
+
             OutlinedTextField(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    //.weight(0.9f)
+                    .fillMaxWidth(0.75f)
+                    .fillMaxHeight(0.9f)
+                    .padding(start = 10.dp),
 
-                    //.fillMaxSize(),
-
-                        //.padding(2.dp)
                 value = query,
                 onValueChange = { query = it },
                 label = { Text("Buscar") },
-                singleLine = true,
-
-
+                singleLine = true
             )
-        }
 
-        Spacer(modifier = Modifier.width(15.dp))
+            Spacer(modifier = Modifier.width(15.dp))
 
-        Box (
-            modifier = Modifier
-                .fillMaxWidth(),
-
-
-        ){
             Icon(
                 imageVector = Icons.Filled.Search,
                 contentDescription = "Buscar",
                 tint = Color.White,
                 modifier = Modifier
-                    //.size(30.dp)
                     .fillMaxSize()
                     .clickable { action.invoke() }
             )
         }
     }
 }
-}
+
 
 @Preview
 @Composable
 fun SearchPreview() {
-    Search (action = {},)
+    Search(action = {})
 }

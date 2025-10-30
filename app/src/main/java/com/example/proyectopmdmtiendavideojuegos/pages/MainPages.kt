@@ -37,6 +37,7 @@ fun SelectorPage() {
     val verticalScrollState = rememberScrollState()
     val horizontalScrollStateJuegosDestacados = rememberScrollState()
     val horizontalScrollStateJuegosRecientes = rememberScrollState()
+    val horizontalScrollStateJuegosAleatorios = rememberScrollState()
 
     data class ImageTextColumnData(
         val txtTitle: String,
@@ -52,7 +53,7 @@ fun SelectorPage() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(Color(0xFF0d0d0d))
-                    .padding(vertical = 15.dp, horizontal = 15.dp),
+                    .padding(top = 15.dp, start = 15.dp, end = 15.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Logo(
@@ -75,10 +76,7 @@ fun SelectorPage() {
             }
         },
 
-
-
-
-                bottomBar = {
+        bottomBar = {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -87,6 +85,7 @@ fun SelectorPage() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
+
                 BottomBarButton(
                     image = R.drawable.a,
                     text = "HOME",
@@ -130,6 +129,39 @@ fun SelectorPage() {
         }
     ) { paddingValues ->
 
+
+
+
+
+
+
+        val juegosDestacados = List(6) {
+            ImageTextColumnData(
+                txtTitle = "Juego destacado $it",
+                txtCategoria = "Categoría",
+                txtConsola = "Consola",
+                imageIdR = R.drawable.a
+            )
+        }.shuffled()
+
+        val juegosRecientes = List(6) {
+            ImageTextColumnData(
+                txtTitle = "Juego reciente $it",
+                txtCategoria = "Categoría",
+                txtConsola = "Consola",
+                imageIdR = R.drawable.a
+            )
+        }.shuffled()
+
+        val juegosAleatorios = List(6) {
+            ImageTextColumnData(
+                txtTitle = "Juego aleatorio $it",
+                txtCategoria = "Categoría",
+                txtConsola = "Consola",
+                imageIdR = R.drawable.a
+            )
+        }.shuffled()
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -139,7 +171,8 @@ fun SelectorPage() {
         ) {
             Box(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(top = 25.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Title(
@@ -150,38 +183,76 @@ fun SelectorPage() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(end = 10.dp)
-                    .statusBarsPadding(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .horizontalScroll(horizontalScrollStateJuegosDestacados)
+                    .padding(top = 15.dp, start = 15.dp)
             ) {
-                val madeForYou = List(6) {
-                    ImageTextColumnData(
-                        txtTitle = "Título $it",
-                        txtCategoria = "Terror",
-                        txtConsola = "PS5",
-                        imageIdR = R.drawable.a
-                    )
-                }.shuffled()
-
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .horizontalScroll(horizontalScrollStateJuegosDestacados)
-                        .padding(top = 15.dp, start = 15.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    madeForYou.forEach { item ->
-                        ImageTextColumn(
-                            txtTitle = item.txtTitle,
-                            txtCategoria = item.txtCategoria,
-                            txtConsola = item.txtConsola,
-                            imageIdR = item.imageIdR,
-                            modifier = Modifier.width(150.dp)
-                        ) {
-                        }
-                        Spacer(modifier = Modifier.width(12.dp))
+                juegosDestacados.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imageIdR = item.imageIdR,
+                    ) {
                     }
+                    Spacer(modifier = Modifier.width(15.dp))
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 25.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Title(
+                    name = "JUEGOS RECIENTES",
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(horizontalScrollStateJuegosRecientes)
+                    .padding(top = 15.dp, start = 15.dp)
+            ) {
+                juegosRecientes.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imageIdR = item.imageIdR,
+                    ) {
+                    }
+                    Spacer(modifier = Modifier.width(15.dp))
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 25.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Title(
+                    name = "JUEGOS ALEATORIOS",
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(horizontalScrollStateJuegosAleatorios)
+                    .padding(top = 15.dp, start = 15.dp)
+            ) {
+                juegosAleatorios.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imageIdR = item.imageIdR,
+                    ) {
+                    }
+                    Spacer(modifier = Modifier.width(15.dp))
                 }
             }
         }

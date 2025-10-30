@@ -37,7 +37,7 @@ fun BottomBarButton(
             painter = painterResource(id = image),
             contentDescription = "",
             modifier = Modifier
-                .size(60.dp)
+                .size(80.dp)
                 .padding(bottom = 8.dp)
         )
 
@@ -45,7 +45,7 @@ fun BottomBarButton(
         Text(
             text = text,
             color = Color.White,
-            fontSize = 8.sp,
+            fontSize = 10.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             maxLines = 1,

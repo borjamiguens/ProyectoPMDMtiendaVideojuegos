@@ -24,62 +24,62 @@ fun Search(
 
     var query by remember { mutableStateOf("") }
 Box (
-    modifier = Modifier.padding(top = 5.dp)
+    modifier = Modifier
+        .padding(top = 5.dp)
         .fillMaxWidth()
-        .height(70.dp)
+        .size(70.dp),
+    contentAlignment = Alignment.Center
+
     )
 {
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
-        //verticalAlignment = Alignment.CenterVertically,
-        //horizontalArrangement = Arrangement.Center
+            .fillMaxWidth(0.95f)
+            .fillMaxHeight()
     ) {
-        Box (
+
+        OutlinedTextField(
             modifier = Modifier
+                //.weight(0.9f)
                 .fillMaxWidth(0.75f)
-                .fillMaxHeight(1f)
-                .align(Alignment.CenterVertically)
-                //.weight(1f)
+                .fillMaxHeight(0.9f)
+                .padding(1.dp)
 
-        ){
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth(),
 
-                    //.fillMaxSize(),
 
-                        //.padding(2.dp)
-                value = query,
-                onValueChange = { query = it },
-                label = { Text("Buscar") },
-                singleLine = true,
+                ,
+            //.weight(1f)
+
+
+            //.fillMaxSize(),
+
+            //.padding(2.dp)
+            value = query,
+            onValueChange = { query = it },
+            label = { Text("Buscar") },
+            singleLine = true,
 
 
             )
-        }
+
 
         Spacer(modifier = Modifier.width(15.dp))
 
-        Box (
+
+        Icon(
+            imageVector = Icons.Filled.Search,
+            contentDescription = "Buscar",
+            tint = Color.White,
             modifier = Modifier
-                .fillMaxWidth(),
-
-
-        ){
-            Icon(
-                imageVector = Icons.Filled.Search,
-                contentDescription = "Buscar",
-                tint = Color.White,
-                modifier = Modifier
-                    //.size(30.dp)
-                    .fillMaxSize()
-                    .clickable { action.invoke() }
-            )
+                //.size(30.dp)
+                .fillMaxSize()
+                .clickable { action.invoke() }
+        )
+    }
         }
     }
-}
-}
+
+
 
 @Preview
 @Composable

@@ -185,6 +185,63 @@ fun SelectorPage() {
                 }
             }
         }
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color(0xFF0d0d0d))
+                .verticalScroll(verticalScrollState)
+                .padding(paddingValues)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                Title(
+                    name = "JUEGOS DESTACADOS",
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(end = 10.dp)
+                    .statusBarsPadding(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                val madeForYou = List(6) {
+                    ImageTextColumnData(
+                        txtTitle = "Título $it",
+                        txtCategoria = "Terror",
+                        txtConsola = "PS5",
+                        imageIdR = R.drawable.a
+                    )
+                }.shuffled()
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(horizontalScrollStateJuegosDestacados)
+                        .padding(top = 15.dp, start = 15.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    madeForYou.forEach { item ->
+                        ImageTextColumn(
+                            txtTitle = item.txtTitle,
+                            txtCategoria = item.txtCategoria,
+                            txtConsola = item.txtConsola,
+                            imageIdR = item.imageIdR,
+                            modifier = Modifier.width(150.dp)
+                        ) {
+                        }
+                        Spacer(modifier = Modifier.width(12.dp))
+                    }
+                }
+            }
+        }
+
     }
 }
 

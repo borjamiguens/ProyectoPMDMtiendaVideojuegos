@@ -34,7 +34,7 @@ Box (
 {
     Row(
         modifier = Modifier
-            .fillMaxWidth(0.95f)
+            .fillMaxWidth()
             .fillMaxHeight()
     ) {
 

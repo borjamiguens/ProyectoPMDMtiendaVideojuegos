@@ -8,7 +8,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 69.99,
-            imagenUrl = "https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
+            imagenResId = "https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
         ),
         Videojuego(
             id = 2,
@@ -16,7 +16,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.PC),
             precio = 59.99,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg"
         ),
         Videojuego(
             id = 3,
@@ -24,7 +24,7 @@ object VideojuegoData {
             categoria = Categoria.PLATAFORMAS,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.NINTENDO_SWITCH),
             precio = 26.95,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"
         ),
         Videojuego(
             id = 4,
@@ -32,7 +32,7 @@ object VideojuegoData {
             categoria = Categoria.SHOOTER,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.NINTENDO_SWITCH),
             precio = 0.0,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Fortnite_cover.jpg/220px-Fortnite_cover.jpg"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Fortnite_cover.jpg/220px-Fortnite_cover.jpg"
         ),
         Videojuego(
             id = 5,
@@ -40,7 +40,7 @@ object VideojuegoData {
             categoria = Categoria.DEPORTES,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/8/8d/Mario_Kart_8_Deluxe.jpg"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/8/8d/Mario_Kart_8_Deluxe.jpg"
         ),
         Videojuego(
             id = 6,
@@ -48,7 +48,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/0/0d/Pokemon_Sword.jpg"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/0/0d/Pokemon_Sword.jpg"
         ),
         Videojuego(
             id = 7,
@@ -56,7 +56,7 @@ object VideojuegoData {
             categoria = Categoria.RPG,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 39.99,
-            imagenUrl = "https://upload.wikimedia.org/wikipedia/en/5/55/The_Elder_Scrolls_V_Skyrim_cover.jpg"
+            imagenResId = "https://upload.wikimedia.org/wikipedia/en/5/55/The_Elder_Scrolls_V_Skyrim_cover.jpg"
         )
     )
 

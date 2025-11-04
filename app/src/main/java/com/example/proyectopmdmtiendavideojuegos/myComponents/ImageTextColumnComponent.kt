@@ -26,7 +26,7 @@ fun ImageTextColumn(
     txtTitle: String,
     txtCategoria: String,
     txtConsola: String,
-    imageUrl: String,
+    imagenResId: Int,
     modifier: Modifier = Modifier,
     action: () -> Unit
 ) {
@@ -45,7 +45,7 @@ fun ImageTextColumn(
 
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(imageUrl)
+                    .data(imagenResId)
                     .crossfade(true)
                     .build(),
                 contentDescription = txtTitle,
@@ -115,6 +115,6 @@ fun ImageTextColumnPreview() {
         txtTitle = "Título del juego",
         txtCategoria = "Aventura",
         txtConsola = "Nintendo Switch",
-        imageUrl = "https://upload.wikimedia.org/wikipedia/en/7/7d/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
+        imagenResId = "https://upload.wikimedia.org/wikipedia/en/7/7d/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
     ) { }
 }

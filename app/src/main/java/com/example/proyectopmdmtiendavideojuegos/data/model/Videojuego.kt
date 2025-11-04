@@ -8,5 +8,5 @@ data class Videojuego(
     val categoria: Categoria,
     val consola: List<Consola>,
     val precio: Double,
-    val imagenUrl: String
+    val imagenResId: Int
 )

@@ -40,18 +40,11 @@ fun SelectorPage() {
     val horizontalScrollStateJuegosRecientes = rememberScrollState()
     val horizontalScrollStateJuegosAleatorios = rememberScrollState()
 
-    data class ImageTextColumnData(
-        val txtTitle: String,
-        val txtCategoria: String,
-        val txtConsola: String,
-        val imageIdR: Int
-    )
-
     data class ImageTextColumnData2(
         val txtTitle: String,
         val txtCategoria: String,
         val txtConsola: String,
-        val imageUrl: String
+        val imagenResId: Int
     )
 
     Scaffold(

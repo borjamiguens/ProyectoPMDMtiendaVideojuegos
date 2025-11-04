@@ -1,5 +1,6 @@
 package com.example.proyectopmdmtiendavideojuegos.myComponents
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -16,10 +17,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.example.proyectopmdmtiendavideojuegos.R
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 
 @Composable
 fun ImageTextColumn(
@@ -33,24 +32,22 @@ fun ImageTextColumn(
 
     Column(
         modifier = modifier
+            .clip(RoundedCornerShape(10.dp))
+            .background(Color.Transparent)
             .clickable { action.invoke() }
+
     ) {
 
         Box(
             modifier = Modifier
                 .height(150.dp)
                 .aspectRatio(1f)
-                .background(Color.Transparent),
         ) {
 
-            AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(imagenResId)
-                    .crossfade(true)
-                    .build(),
+            Image(
+                painter = painterResource(id = imagenResId),
                 contentDescription = txtTitle,
                 modifier = Modifier
-                    .clip(RoundedCornerShape(3.dp))
                     .fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
@@ -61,12 +58,13 @@ fun ImageTextColumn(
             modifier = Modifier
                 .wrapContentHeight()
                 .width(150.dp)
-                .background(Color.Transparent)
                 .padding(vertical = 12.dp),
         ) {
 
             Box(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -82,28 +80,37 @@ fun ImageTextColumn(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            Box(modifier = Modifier.fillMaxWidth()) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp),
+                contentAlignment = Alignment.Center
+            ) {
                 Text(
                     text = txtCategoria,
                     fontSize = 12.sp,
                     color = Color.LightGray,
                     maxLines = 1,
-                    overflow = TextOverflow.Clip,
+                    overflow = TextOverflow.Clip
                 )
             }
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Box(modifier = Modifier.fillMaxWidth()) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 5.dp),
+                contentAlignment = Alignment.Center
+            ) {
                 Text(
                     text = txtConsola,
                     fontSize = 12.sp,
                     color = Color.LightGray,
                     maxLines = 1,
-                    overflow = TextOverflow.Clip,
+                    overflow = TextOverflow.Ellipsis
                 )
             }
-
         }
     }
 }
@@ -115,6 +122,6 @@ fun ImageTextColumnPreview() {
         txtTitle = "Título del juego",
         txtCategoria = "Aventura",
         txtConsola = "Nintendo Switch",
-        imagenResId = "https://upload.wikimedia.org/wikipedia/en/7/7d/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
+        imagenResId = R.drawable.a
     ) { }
 }

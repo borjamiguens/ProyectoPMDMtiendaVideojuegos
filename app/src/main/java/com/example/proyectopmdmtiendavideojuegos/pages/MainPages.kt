@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.proyectopmdmtiendavideojuegos.R
+import com.example.proyectopmdmtiendavideojuegos.data.model.VideojuegoData.listaVideojuegos
 import com.example.proyectopmdmtiendavideojuegos.myComponents.BottomBarButton
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ImageTextColumn
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Logo
@@ -39,11 +40,11 @@ fun SelectorPage() {
     val horizontalScrollStateJuegosRecientes = rememberScrollState()
     val horizontalScrollStateJuegosAleatorios = rememberScrollState()
 
-    data class ImageTextColumnData(
+    data class ImageTextColumnData2(
         val txtTitle: String,
         val txtCategoria: String,
         val txtConsola: String,
-        val imageIdR: Int
+        val imagenResId: Int
     )
 
     Scaffold(
@@ -135,30 +136,30 @@ fun SelectorPage() {
 
 
 
-        val juegosDestacados = List(6) {
-            ImageTextColumnData(
-                txtTitle = "Juego destacado $it",
-                txtCategoria = "Categoría",
-                txtConsola = "Consola",
-                imageIdR = R.drawable.a
+        val juegosDestacados = listaVideojuegos.take(6).map { juego ->
+            ImageTextColumnData2(
+                txtTitle = juego.nombre,
+                txtCategoria = juego.categoria.displayName,
+                txtConsola = juego.consola.joinToString(", ") { it.displayName },
+                imageUrl = juego.imagenUrl
             )
         }.shuffled()
 
-        val juegosRecientes = List(6) {
-            ImageTextColumnData(
-                txtTitle = "Juego reciente $it",
-                txtCategoria = "Categoría",
-                txtConsola = "Consola",
-                imageIdR = R.drawable.a
-            )
-        }.shuffled()
+        val juegosRecientes = listaVideojuegos.take(6).map { juego ->
+        ImageTextColumnData2(
+            txtTitle = juego.nombre,
+            txtCategoria = juego.categoria.displayName,
+            txtConsola = juego.consola.joinToString(", ") { it.displayName },
+            imageUrl = juego.imagenUrl
+        )
+    }.shuffled()
 
-        val juegosAleatorios = List(6) {
-            ImageTextColumnData(
-                txtTitle = "Juego aleatorio $it",
-                txtCategoria = "Categoría",
-                txtConsola = "Consola",
-                imageIdR = R.drawable.a
+        val juegosAleatorios = listaVideojuegos.take(6).map { juego ->
+            ImageTextColumnData2(
+                txtTitle = juego.nombre,
+                txtCategoria = juego.categoria.displayName,
+                txtConsola = juego.consola.joinToString(", ") { it.displayName },
+                imageUrl = juego.imagenUrl
             )
         }.shuffled()
 
@@ -191,7 +192,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageIdR = item.imageIdR,
+                        imageUrl = item.imageUrl,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))
@@ -220,7 +221,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageIdR = item.imageIdR,
+                        imageUrl = item.imageUrl,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))
@@ -249,7 +250,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageIdR = item.imageIdR,
+                        imageUrl = item.imageUrl,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))

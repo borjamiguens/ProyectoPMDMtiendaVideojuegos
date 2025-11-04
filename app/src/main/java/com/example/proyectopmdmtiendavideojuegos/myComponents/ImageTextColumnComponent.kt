@@ -1,21 +1,8 @@
 package com.example.proyectopmdmtiendavideojuegos.myComponents
 
-import android.media.Image
-import android.os.Message
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,50 +11,57 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.example.proyectopmdmtiendavideojuegos.R
+import androidx.compose.ui.platform.LocalContext
 
 @Composable
-fun ImageTextColumn (
+fun ImageTextColumn(
     txtTitle: String,
     txtCategoria: String,
     txtConsola: String,
-    imageIdR: Int,
+    imagenResId: Int,
     modifier: Modifier = Modifier,
     action: () -> Unit
-){
+) {
 
     Column(
-        modifier = Modifier
-            .clickable { action.invoke() }) {
+        modifier = modifier
+            .clickable { action.invoke() }
+    ) {
 
         Box(
-            modifier = Modifier.Companion
-                .height(height = 150.dp)
+            modifier = Modifier
+                .height(150.dp)
                 .aspectRatio(1f)
-                .background(color = Color.Companion.Transparent),
+                .background(Color.Transparent),
         ) {
 
-            androidx.compose.foundation.Image(
-                painter = painterResource(id = imageIdR),
-                contentDescription = "",
-                modifier = Modifier.Companion
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(imagenResId)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = txtTitle,
+                modifier = Modifier
                     .clip(RoundedCornerShape(3.dp))
                     .fillMaxSize(),
-                contentScale = ContentScale.Companion.Crop
+                contentScale = ContentScale.Crop
             )
 
         }
+
         Column(
-            modifier = Modifier.Companion
+            modifier = Modifier
                 .wrapContentHeight()
                 .width(150.dp)
-                .background(Color.Companion.Transparent)
+                .background(Color.Transparent)
                 .padding(vertical = 12.dp),
         ) {
 
@@ -88,29 +82,25 @@ fun ImageTextColumn (
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-            ) {
+            Box(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     text = txtCategoria,
                     fontSize = 12.sp,
-                    color = Color.Companion.LightGray,
+                    color = Color.LightGray,
                     maxLines = 1,
-                    overflow = TextOverflow.Companion.Clip,
+                    overflow = TextOverflow.Clip,
                 )
             }
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Box(
-                modifier = Modifier.fillMaxWidth(),
-            ) {
+            Box(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     text = txtConsola,
                     fontSize = 12.sp,
-                    color = Color.Companion.LightGray,
+                    color = Color.LightGray,
                     maxLines = 1,
-                    overflow = TextOverflow.Companion.Clip,
+                    overflow = TextOverflow.Clip,
                 )
             }
 
@@ -120,7 +110,11 @@ fun ImageTextColumn (
 
 @Preview
 @Composable
-fun ImageTextColumnPreview () {
-    ImageTextColumn(txtTitle = "Título del juego", txtCategoria = "Terror", txtConsola = "PS5", imageIdR = R.drawable.a) { }
-
+fun ImageTextColumnPreview() {
+    ImageTextColumn(
+        txtTitle = "Título del juego",
+        txtCategoria = "Aventura",
+        txtConsola = "Nintendo Switch",
+        imagenResId = "https://upload.wikimedia.org/wikipedia/en/7/7d/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
+    ) { }
 }

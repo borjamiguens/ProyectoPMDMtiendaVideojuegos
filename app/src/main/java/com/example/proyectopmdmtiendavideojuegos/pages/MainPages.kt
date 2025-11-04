@@ -18,6 +18,12 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Category
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Login
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.VideogameAsset
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -40,7 +46,7 @@ fun SelectorPage() {
     val horizontalScrollStateJuegosRecientes = rememberScrollState()
     val horizontalScrollStateJuegosAleatorios = rememberScrollState()
 
-    data class ImageTextColumnData2(
+    data class ImageTextColumnData(
         val txtTitle: String,
         val txtCategoria: String,
         val txtConsola: String,
@@ -86,58 +92,17 @@ fun SelectorPage() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
-                BottomBarButton(
-                    image = R.drawable.a,
-                    text = "HOME",
-                    modifier = Modifier
-                        .navigationBarsPadding()
-                        .width(60.dp)
-                ) { }
-
-                BottomBarButton(
-                    image = R.drawable.a,
-                    text = "CONSOLAS",
-                    modifier = Modifier
-                        .navigationBarsPadding()
-                        .width(60.dp)
-                ) { }
-
-                BottomBarButton(
-                    image = R.drawable.a,
-                    text = "CATEGORIAS",
-                    modifier = Modifier
-                        .navigationBarsPadding()
-                        .width(60.dp)
-                ) { }
-
-                BottomBarButton(
-                    image = R.drawable.a,
-                    text = "LOGIN",
-                    modifier = Modifier
-                        .navigationBarsPadding()
-                        .width(60.dp)
-                ) { }
-
-                BottomBarButton(
-                    image = R.drawable.a,
-                    text = "PERFIL",
-                    modifier = Modifier
-                        .navigationBarsPadding()
-                        .width(60.dp)
-                ) { }
+                BottomBarButton(Icons.Filled.Home, "HOME") { }
+                BottomBarButton(Icons.Filled.VideogameAsset, "CONSOLAS") { }
+                BottomBarButton(Icons.Filled.Category, "CATEGORIAS") { }
+                BottomBarButton(Icons.Filled.Login, "LOGIN") { }
+                BottomBarButton(Icons.Filled.Person, "PERFIL") { }
             }
         }
     ) { paddingValues ->
 
-
-
-
-
-
-
         val juegosDestacados = listaVideojuegos.take(6).map { juego ->
-            ImageTextColumnData2(
+            ImageTextColumnData(
                 txtTitle = juego.nombre,
                 txtCategoria = juego.categoria.displayName,
                 txtConsola = juego.consola.joinToString(", ") { it.displayName },
@@ -146,7 +111,7 @@ fun SelectorPage() {
         }.shuffled()
 
         val juegosRecientes = listaVideojuegos.take(6).map { juego ->
-        ImageTextColumnData2(
+        ImageTextColumnData(
             txtTitle = juego.nombre,
             txtCategoria = juego.categoria.displayName,
             txtConsola = juego.consola.joinToString(", ") { it.displayName },
@@ -155,7 +120,7 @@ fun SelectorPage() {
         }.shuffled()
 
         val juegosAleatorios = listaVideojuegos.take(6).map { juego ->
-            ImageTextColumnData2(
+            ImageTextColumnData(
                 txtTitle = juego.nombre,
                 txtCategoria = juego.categoria.displayName,
                 txtConsola = juego.consola.joinToString(", ") { it.displayName },
@@ -180,7 +145,6 @@ fun SelectorPage() {
                     name = "JUEGOS DESTACADOS",
                 )
             }
-
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -193,8 +157,7 @@ fun SelectorPage() {
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
                         imagenResId = item.imagenResId,
-                    ) {
-                    }
+                    ) { }
                     Spacer(modifier = Modifier.width(15.dp))
                 }
             }
@@ -222,8 +185,7 @@ fun SelectorPage() {
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
                         imagenResId = item.imagenResId,
-                    ) {
-                    }
+                    ) { }
                     Spacer(modifier = Modifier.width(15.dp))
                 }
             }
@@ -251,8 +213,7 @@ fun SelectorPage() {
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
                         imagenResId = item.imagenResId,
-                    ) {
-                    }
+                    ) { }
                     Spacer(modifier = Modifier.width(15.dp))
                 }
             }

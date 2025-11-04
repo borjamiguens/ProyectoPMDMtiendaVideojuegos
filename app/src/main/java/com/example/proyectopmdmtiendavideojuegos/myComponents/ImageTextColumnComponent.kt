@@ -115,6 +115,6 @@ fun ImageTextColumnPreview() {
         txtTitle = "Título del juego",
         txtCategoria = "Aventura",
         txtConsola = "Nintendo Switch",
-        imagenResId = "https://upload.wikimedia.org/wikipedia/en/7/7d/The_Legend_of_Zelda_Tears_of_the_Kingdom_cover.jpg"
+        imagenResId = R.drawable.a
     ) { }
 }

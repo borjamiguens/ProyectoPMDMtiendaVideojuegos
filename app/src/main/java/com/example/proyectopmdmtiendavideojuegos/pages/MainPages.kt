@@ -141,7 +141,7 @@ fun SelectorPage() {
                 txtTitle = juego.nombre,
                 txtCategoria = juego.categoria.displayName,
                 txtConsola = juego.consola.joinToString(", ") { it.displayName },
-                imageUrl = juego.imagenUrl
+                imagenResId = juego.imagenResId
             )
         }.shuffled()
 
@@ -150,16 +150,16 @@ fun SelectorPage() {
             txtTitle = juego.nombre,
             txtCategoria = juego.categoria.displayName,
             txtConsola = juego.consola.joinToString(", ") { it.displayName },
-            imageUrl = juego.imagenUrl
+            imagenResId = juego.imagenResId
         )
-    }.shuffled()
+        }.shuffled()
 
         val juegosAleatorios = listaVideojuegos.take(6).map { juego ->
             ImageTextColumnData2(
                 txtTitle = juego.nombre,
                 txtCategoria = juego.categoria.displayName,
                 txtConsola = juego.consola.joinToString(", ") { it.displayName },
-                imageUrl = juego.imagenUrl
+                imagenResId = juego.imagenResId
             )
         }.shuffled()
 
@@ -192,7 +192,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageUrl = item.imageUrl,
+                        imagenResId = item.imagenResId,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))
@@ -221,7 +221,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageUrl = item.imageUrl,
+                        imagenResId = item.imagenResId,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))
@@ -250,7 +250,7 @@ fun SelectorPage() {
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imageUrl = item.imageUrl,
+                        imagenResId = item.imagenResId,
                     ) {
                     }
                     Spacer(modifier = Modifier.width(15.dp))

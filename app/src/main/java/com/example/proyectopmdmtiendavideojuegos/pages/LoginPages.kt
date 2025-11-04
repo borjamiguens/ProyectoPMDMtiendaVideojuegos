@@ -13,8 +13,8 @@ import com.example.proyectopmdmtiendavideojuegos.myComponents.Password
 
 @Composable
 fun Login() {
-    var username by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    //val username
+    //val passwordname
 
     Column(
         modifier = Modifier
@@ -32,17 +32,14 @@ fun Login() {
 
         // Campo de usuario
         FieldText()
-
-
         Spacer(modifier = Modifier.height(16.dp))
 
         // Campo de contraseña
         Password()
-
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            onClick = { /* TODO: Lógica de inicio de sesión */ },
+            onClick = {  },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Entrar")

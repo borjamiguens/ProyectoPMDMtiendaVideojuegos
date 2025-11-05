@@ -11,10 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -42,7 +39,7 @@ import com.example.proyectopmdmtiendavideojuegos.myComponents.Title
 fun SelectorPage() {
 
     val verticalScrollState = rememberScrollState()
-    val horizontalScrollStateJuegosDestacados = rememberScrollState()
+    val horizontalScrollStateJuegosMasVendidos = rememberScrollState()
     val horizontalScrollStateJuegosRecientes = rememberScrollState()
     val horizontalScrollStateJuegosAleatorios = rememberScrollState()
 
@@ -64,7 +61,7 @@ fun SelectorPage() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Logo(
-                    logo = R.drawable.a,
+                    logo = R.drawable.imagen_prueba,
                     name = "NOMBRE",
                     modifier = Modifier
                 ) { }
@@ -101,29 +98,37 @@ fun SelectorPage() {
         }
     ) { paddingValues ->
 
-        val juegosDestacados = listaVideojuegos.take(6).map { juego ->
+        val juegosMasVendidos = listaVideojuegos
+            .sortedByDescending { it.numVentas }
+            .take(8)
+            .map { juego ->
+                ImageTextColumnData(
+                    txtTitle = juego.nombre,
+                    txtCategoria = juego.categoria.displayName,
+                    txtConsola = juego.consola.random().displayName,
+                    imagenResId = juego.imagenResId
+                )
+            }
+
+        val juegosRecientes = listaVideojuegos
+            .takeLast(8)
+            .reversed()
+            .map { juego ->
+                ImageTextColumnData(
+                    txtTitle = juego.nombre,
+                    txtCategoria = juego.categoria.displayName,
+                    txtConsola = juego.consola.random().displayName,
+                    imagenResId = juego.imagenResId
+                )
+            }
+
+        val juegosAleatorios = listaVideojuegos
+            .take(8)
+            .map { juego ->
             ImageTextColumnData(
                 txtTitle = juego.nombre,
                 txtCategoria = juego.categoria.displayName,
-                txtConsola = juego.consola.joinToString(", ") { it.displayName },
-                imagenResId = juego.imagenResId
-            )
-        }.shuffled()
-
-        val juegosRecientes = listaVideojuegos.take(6).map { juego ->
-        ImageTextColumnData(
-            txtTitle = juego.nombre,
-            txtCategoria = juego.categoria.displayName,
-            txtConsola = juego.consola.joinToString(", ") { it.displayName },
-            imagenResId = juego.imagenResId
-        )
-        }.shuffled()
-
-        val juegosAleatorios = listaVideojuegos.take(6).map { juego ->
-            ImageTextColumnData(
-                txtTitle = juego.nombre,
-                txtCategoria = juego.categoria.displayName,
-                txtConsola = juego.consola.joinToString(", ") { it.displayName },
+                txtConsola = juego.consola.random().displayName,
                 imagenResId = juego.imagenResId
             )
         }.shuffled()
@@ -142,16 +147,16 @@ fun SelectorPage() {
                 contentAlignment = Alignment.Center
             ) {
                 Title(
-                    name = "JUEGOS DESTACADOS",
+                    name = "JUEGOS MÁS VENDIDOS",
                 )
             }
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .horizontalScroll(horizontalScrollStateJuegosDestacados)
+                    .horizontalScroll(horizontalScrollStateJuegosMasVendidos)
                     .padding(top = 15.dp, start = 15.dp)
             ) {
-                juegosDestacados.forEach { item ->
+                juegosMasVendidos.forEach { item ->
                     ImageTextColumn(
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,

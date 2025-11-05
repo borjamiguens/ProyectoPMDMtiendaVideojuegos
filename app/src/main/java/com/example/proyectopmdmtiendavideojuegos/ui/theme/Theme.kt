@@ -1,6 +1,5 @@
 package com.example.proyectopmdmtiendavideojuegos.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -15,7 +14,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.proyectopmdmtiendavideojuegos.R
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ImageTextRow
-import com.example.proyectopmdmtiendavideojuegos.pages.SelectorPage
 
 
 /*Color primario -> botones, barras superiores, y elementos importantes.
@@ -100,7 +98,7 @@ fun ProyectoPMDMtiendaVideojuegosTheme(
 fun LightPreview() {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false) {
         ImageTextRow(
-            "prueba", R.drawable.juegominecraft,
+            "prueba", R.drawable.juego_minecraft,
             modifier = Modifier,
             action = { }
         )
@@ -112,7 +110,7 @@ fun LightPreview() {
 fun DarkPreview() {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
         ImageTextRow(
-            "prueba", R.drawable.juegominecraft,
+            "prueba", R.drawable.juego_minecraft,
             modifier = Modifier,
             action = {  }
         )

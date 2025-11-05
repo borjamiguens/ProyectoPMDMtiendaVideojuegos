@@ -17,7 +17,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -83,7 +82,7 @@ fun ImageTextRow(
 @Composable
 fun ImageTextRowPreview () {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
-        ImageTextRow(txtMsg = "TEXTO", R.drawable.juegordr2) { }
+        ImageTextRow(txtMsg = "TEXTO", R.drawable.juego_rdr2) { }
     }
 }
 
@@ -91,6 +90,6 @@ fun ImageTextRowPreview () {
 @Composable
 fun ImageTextRowPreview2 () {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false){
-        ImageTextRow(txtMsg = "RDR 2",  R.drawable.juegordr2) { }
+        ImageTextRow(txtMsg = "RDR 2",  R.drawable.juego_rdr2) { }
     }
 }

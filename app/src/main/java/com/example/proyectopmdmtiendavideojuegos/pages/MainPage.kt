@@ -36,7 +36,7 @@ import com.example.proyectopmdmtiendavideojuegos.myComponents.Logo
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Title
 
 @Composable
-fun SelectorPage() {
+fun MainPage() {
 
     val verticalScrollState = rememberScrollState()
     val horizontalScrollStateJuegosMasVendidos = rememberScrollState()
@@ -104,8 +104,8 @@ fun SelectorPage() {
             .map { juego ->
                 ImageTextColumnData(
                     txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.displayName,
-                    txtConsola = juego.consola.random().displayName,
+                    txtCategoria = juego.categoria.categoryName,
+                    txtConsola = juego.consola.random().consoleName,
                     imagenResId = juego.imagenResId
                 )
             }
@@ -116,8 +116,8 @@ fun SelectorPage() {
             .map { juego ->
                 ImageTextColumnData(
                     txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.displayName,
-                    txtConsola = juego.consola.random().displayName,
+                    txtCategoria = juego.categoria.categoryName,
+                    txtConsola = juego.consola.random().consoleName,
                     imagenResId = juego.imagenResId
                 )
             }
@@ -127,8 +127,8 @@ fun SelectorPage() {
             .map { juego ->
             ImageTextColumnData(
                 txtTitle = juego.nombre,
-                txtCategoria = juego.categoria.displayName,
-                txtConsola = juego.consola.random().displayName,
+                txtCategoria = juego.categoria.categoryName,
+                txtConsola = juego.consola.random().consoleName,
                 imagenResId = juego.imagenResId
             )
         }.shuffled()
@@ -228,6 +228,6 @@ fun SelectorPage() {
 
 @Preview
 @Composable
-fun SelectorPagePreview() {
-    SelectorPage()
+fun MainPagePreview() {
+    MainPage()
 }

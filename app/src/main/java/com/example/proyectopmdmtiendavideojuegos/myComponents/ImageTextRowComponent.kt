@@ -9,9 +9,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -34,22 +36,21 @@ import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVide
 fun ImageTextRow(
     txtMsg: String,
     imageIdR: Int,
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier
+        .height(100.dp)
+        .fillMaxWidth(),
     action: () -> Unit
 ) {
-
     Row(
-        modifier = Modifier
-            .height(100.dp)
+        modifier = modifier
             .border(
                 width = 1.dp,
                 color = Color.White.copy(alpha = 0.1f),
                 shape = RoundedCornerShape(12.dp)
             )
-            .clip(shape = RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(12.dp))
             .clickable { action.invoke() }
     ) {
-
         Box(
             modifier = Modifier
                 .fillMaxHeight()
@@ -72,7 +73,7 @@ fun ImageTextRow(
         ) {
             Text(
                 text = txtMsg,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 color = Color.Black.copy(alpha = 0.4f),
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
@@ -82,11 +83,10 @@ fun ImageTextRow(
                     .offset(x = 1.dp, y = 1.dp)
             )
 
-
             Text(
                 text = txtMsg,
                 modifier = Modifier.padding(start = 10.dp),
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 color = MaterialTheme.colorScheme.onBackground,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,

@@ -2,6 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.myComponents
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -33,15 +34,14 @@ fun ImageTextColumn(
 
     Column(
         modifier = modifier
-            .shadow(
-                elevation = 12.dp,
-                shape = RoundedCornerShape(10.dp),
-                clip = false
-            )
-            .clip(RoundedCornerShape(10.dp))
+            .clip(shape = RoundedCornerShape(12.dp))
             .background(Color(0xFF1F1F1F))
+            .border(
+                width = 1.dp,
+                color = Color.White.copy(alpha = 0.1f),
+                shape = RoundedCornerShape(12.dp)
+            )
             .clickable { action.invoke() }
-
     ) {
 
         Box(
@@ -108,6 +108,7 @@ fun ImageTextColumn(
                     text = txtCategoria,
                     fontSize = 12.sp,
                     color = Color.LightGray,
+                    fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Clip
                 )
@@ -125,6 +126,7 @@ fun ImageTextColumn(
                     text = txtConsola,
                     fontSize = 12.sp,
                     color = Color.LightGray,
+                    fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
@@ -32,8 +33,13 @@ fun ImageTextColumn(
 
     Column(
         modifier = modifier
+            .shadow(
+                elevation = 12.dp,
+                shape = RoundedCornerShape(10.dp),
+                clip = false
+            )
             .clip(RoundedCornerShape(10.dp))
-            .background(Color.Transparent)
+            .background(Color(0xFF1F1F1F))
             .clickable { action.invoke() }
 
     ) {
@@ -70,10 +76,22 @@ fun ImageTextColumn(
                 Text(
                     text = txtTitle,
                     fontSize = 13.sp,
+                    color = Color.Black.copy(alpha = 0.6f),
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    lineHeight = 10.sp,
+                    modifier = Modifier.offset(x = 1.dp, y = 2.dp)
+                )
+
+
+                Text(
+                    text = txtTitle,
+                    fontSize = 13.sp,
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
-                    overflow = TextOverflow.Clip,
+                    overflow = TextOverflow.Ellipsis,
                     lineHeight = 10.sp
                 )
             }
@@ -122,6 +140,6 @@ fun ImageTextColumnPreview() {
         txtTitle = "Título del juego",
         txtCategoria = "Aventura",
         txtConsola = "Nintendo Switch",
-        imagenResId = R.drawable.a
+        imagenResId = R.drawable.juego_fortnite
     ) { }
 }

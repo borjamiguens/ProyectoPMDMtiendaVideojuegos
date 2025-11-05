@@ -8,5 +8,6 @@ data class Videojuego(
     val categoria: Categoria,
     val consola: List<Consola>,
     val precio: Double,
+    val numVentas: Int,
     val imagenResId: Int
 )

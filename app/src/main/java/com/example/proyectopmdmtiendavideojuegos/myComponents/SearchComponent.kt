@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 
 @Composable
@@ -39,11 +41,9 @@ fun Search(
 
             OutlinedTextField(
                 modifier = Modifier
-                    //.weight(0.9f)
                     .fillMaxWidth(0.75f)
                     .fillMaxHeight(0.9f)
                     .padding(start = 10.dp),
-
                 value = query,
                 onValueChange = { query = it },
                 label = { Text("Buscar") },
@@ -55,7 +55,7 @@ fun Search(
             Icon(
                 imageVector = Icons.Filled.Search,
                 contentDescription = "Buscar",
-                tint = Color.White,
+                tint = MaterialTheme.colorScheme.onPrimary,
                 modifier = Modifier
                     .fillMaxSize()
                     .clickable { action.invoke() }
@@ -68,5 +68,7 @@ fun Search(
 @Preview
 @Composable
 fun SearchPreview() {
-    Search(action = {})
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+        Search(action = {})
+    }
 }

@@ -6,6 +6,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectopmdmtiendavideojuegos.R
 import androidx.compose.ui.res.painterResource
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
 fun ImageTextColumn(
@@ -35,7 +37,7 @@ fun ImageTextColumn(
     Column(
         modifier = modifier
             .clip(shape = RoundedCornerShape(12.dp))
-            .background(Color(0xFF1F1F1F))
+            .background(MaterialTheme.colorScheme.primary)
             .border(
                 width = 1.dp,
                 color = Color.White.copy(alpha = 0.1f),
@@ -88,7 +90,7 @@ fun ImageTextColumn(
                 Text(
                     text = txtTitle,
                     fontSize = 13.sp,
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
@@ -107,7 +109,7 @@ fun ImageTextColumn(
                 Text(
                     text = txtCategoria,
                     fontSize = 12.sp,
-                    color = Color.LightGray,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Clip
@@ -125,7 +127,7 @@ fun ImageTextColumn(
                 Text(
                     text = txtConsola,
                     fontSize = 12.sp,
-                    color = Color.LightGray,
+                    color = MaterialTheme.colorScheme.onPrimary,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -138,10 +140,12 @@ fun ImageTextColumn(
 @Preview
 @Composable
 fun ImageTextColumnPreview() {
-    ImageTextColumn(
-        txtTitle = "Título del juego",
-        txtCategoria = "Aventura",
-        txtConsola = "Nintendo Switch",
-        imagenResId = R.drawable.juego_fortnite
-    ) { }
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+        ImageTextColumn(
+            txtTitle = "Título del juego",
+            txtCategoria = "Aventura",
+            txtConsola = "Nintendo Switch",
+            imagenResId = R.drawable.juego_fortnite
+        ) { }
+    }
 }

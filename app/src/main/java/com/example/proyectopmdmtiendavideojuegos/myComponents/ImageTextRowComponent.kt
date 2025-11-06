@@ -68,13 +68,13 @@ fun ImageTextRow(
             modifier = Modifier
                 .fillMaxHeight()
                 .weight(1f)
-                .background(MaterialTheme.colorScheme.background),
+                .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.CenterStart
         ) {
             Text(
                 text = txtMsg,
                 fontSize = 16.sp,
-                color = Color.Black.copy(alpha = 0.4f),
+                color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.4f),
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Clip,
@@ -87,7 +87,7 @@ fun ImageTextRow(
                 text = txtMsg,
                 modifier = Modifier.padding(start = 10.dp),
                 fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onBackground,
+                color = MaterialTheme.colorScheme.onPrimary,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Clip

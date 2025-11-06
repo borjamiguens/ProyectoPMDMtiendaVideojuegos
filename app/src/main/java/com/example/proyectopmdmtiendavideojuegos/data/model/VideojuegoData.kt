@@ -10,7 +10,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 69.99,
-            numVentas = 67,
+            numAlquilados = 67,
             imagenResId = R.drawable.juego_zeldatotk
         ),
         Videojuego(
@@ -19,7 +19,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.PC),
             precio = 59.99,
-            numVentas = 120,
+            numAlquilados = 120,
             imagenResId = R.drawable.juego_rdr2
         ),
         Videojuego(
@@ -28,7 +28,7 @@ object VideojuegoData {
             categoria = Categoria.PLATAFORMAS,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.NINTENDO_SWITCH),
             precio = 26.95,
-            numVentas = 350,
+            numAlquilados = 350,
             imagenResId = R.drawable.juego_minecraft
         ),
         Videojuego(
@@ -37,7 +37,7 @@ object VideojuegoData {
             categoria = Categoria.SHOOTER,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 29.99,
-            numVentas = 35,
+            numAlquilados = 35,
             imagenResId = R.drawable.juego_fortnite
         ),
         Videojuego(
@@ -46,7 +46,7 @@ object VideojuegoData {
             categoria = Categoria.CARRERAS,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            numVentas = 95,
+            numAlquilados = 95,
             imagenResId = R.drawable.juego_mariokart8
         ),
         Videojuego(
@@ -55,7 +55,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            numVentas = 77,
+            numAlquilados = 77,
             imagenResId = R.drawable.juego_pokemonsword
         ),
         Videojuego(
@@ -64,7 +64,7 @@ object VideojuegoData {
             categoria = Categoria.RPG,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 39.99,
-            numVentas = 58,
+            numAlquilados = 58,
             imagenResId = R.drawable.juego_skyrim
         ),
         Videojuego(
@@ -73,7 +73,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PLAYSTATION_5, Consola.PLAYSTATION_4),
             precio = 69.99,
-            numVentas = 140,
+            numAlquilados = 140,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -82,7 +82,7 @@ object VideojuegoData {
             categoria = Categoria.DEPORTES,
             consola = listOf(Consola.PLAYSTATION_5, Consola.PLAYSTATION_4, Consola.XBOX_SERIES_X, Consola.PC),
             precio = 59.99,
-            numVentas = 200,
+            numAlquilados = 200,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -91,7 +91,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 29.99,
-            numVentas = 450,
+            numAlquilados = 450,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -100,7 +100,7 @@ object VideojuegoData {
             categoria = Categoria.SHOOTER,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 69.99,
-            numVentas = 180,
+            numAlquilados = 180,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -109,7 +109,7 @@ object VideojuegoData {
             categoria = Categoria.RPG,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X, Consola.PLAYSTATION_4, Consola.XBOX_ONE),
             precio = 39.99,
-            numVentas = 260,
+            numAlquilados = 260,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -118,7 +118,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 49.99,
-            numVentas = 150,
+            numAlquilados = 150,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -127,7 +127,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.PLAYSTATION_5, Consola.PLAYSTATION_4),
             precio = 69.99,
-            numVentas = 90,
+            numAlquilados = 90,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -136,7 +136,7 @@ object VideojuegoData {
             categoria = Categoria.CARRERAS,
             consola = listOf(Consola.PLAYSTATION_5, Consola.PLAYSTATION_4),
             precio = 69.99,
-            numVentas = 75,
+            numAlquilados = 75,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -145,7 +145,7 @@ object VideojuegoData {
             categoria = Categoria.CARRERAS,
             consola = listOf(Consola.XBOX_SERIES_X, Consola.XBOX_ONE, Consola.PC),
             precio = 59.99,
-            numVentas = 85,
+            numAlquilados = 85,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -154,7 +154,7 @@ object VideojuegoData {
             categoria = Categoria.SIMULACION,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 49.99,
-            numVentas = 160,
+            numAlquilados = 160,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -163,7 +163,7 @@ object VideojuegoData {
             categoria = Categoria.PLATAFORMAS,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            numVentas = 130,
+            numAlquilados = 130,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -172,7 +172,7 @@ object VideojuegoData {
             categoria = Categoria.AVENTURA,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 49.99,
-            numVentas = 45,
+            numAlquilados = 45,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -181,7 +181,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PC, Consola.NINTENDO_SWITCH, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 24.99,
-            numVentas = 70,
+            numAlquilados = 70,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -190,7 +190,7 @@ object VideojuegoData {
             categoria = Categoria.PLATAFORMAS,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_4, Consola.NINTENDO_SWITCH),
             precio = 19.99,
-            numVentas = 25,
+            numAlquilados = 25,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -199,7 +199,7 @@ object VideojuegoData {
             categoria = Categoria.SIMULACION,
             consola = listOf(Consola.PC, Consola.NINTENDO_SWITCH, Consola.PLAYSTATION_4, Consola.XBOX_ONE),
             precio = 14.99,
-            numVentas = 120,
+            numAlquilados = 120,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -208,7 +208,7 @@ object VideojuegoData {
             categoria = Categoria.RPG,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_4, Consola.XBOX_ONE),
             precio = 39.99,
-            numVentas = 80,
+            numAlquilados = 80,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -217,7 +217,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_4, Consola.XBOX_ONE),
             precio = 49.99,
-            numVentas = 60,
+            numAlquilados = 60,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -226,7 +226,7 @@ object VideojuegoData {
             categoria = Categoria.RPG,
             consola = listOf(Consola.PLAYSTATION_4, Consola.PLAYSTATION_5),
             precio = 59.99,
-            numVentas = 50,
+            numAlquilados = 50,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -235,7 +235,7 @@ object VideojuegoData {
             categoria = Categoria.ACCION,
             consola = listOf(Consola.NINTENDO_SWITCH, Consola.PC),
             precio = 49.99,
-            numVentas = 65,
+            numAlquilados = 65,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -244,7 +244,7 @@ object VideojuegoData {
             categoria = Categoria.SHOOTER,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 39.99,
-            numVentas = 55,
+            numAlquilados = 55,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -253,7 +253,7 @@ object VideojuegoData {
             categoria = Categoria.PLATAFORMAS,
             consola = listOf(Consola.NINTENDO_SWITCH),
             precio = 59.99,
-            numVentas = 40,
+            numAlquilados = 40,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -262,7 +262,7 @@ object VideojuegoData {
             categoria = Categoria.PUZZLE,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_4, Consola.XBOX_ONE),
             precio = 29.99,
-            numVentas = 20,
+            numAlquilados = 20,
             imagenResId = R.drawable.imagen_prueba
         ),
         Videojuego(
@@ -271,7 +271,7 @@ object VideojuegoData {
             categoria = Categoria.TERROR,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 59.99,
-            numVentas = 110,
+            numAlquilados = 110,
             imagenResId = R.drawable.imagen_prueba
         )
     )

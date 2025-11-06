@@ -99,7 +99,7 @@ fun MainPage() {
     ) { paddingValues ->
 
         val juegosMasVendidos = listaVideojuegos
-            .sortedByDescending { it.numVentas }
+            .sortedByDescending { it.numAlquilados }
             .take(8)
             .map { juego ->
                 ImageTextColumnData(
@@ -147,7 +147,7 @@ fun MainPage() {
                 contentAlignment = Alignment.Center
             ) {
                 Title(
-                    name = "JUEGOS MÁS VENDIDOS",
+                    name = "JUEGOS DESTACADOS",
                 )
             }
             Row(

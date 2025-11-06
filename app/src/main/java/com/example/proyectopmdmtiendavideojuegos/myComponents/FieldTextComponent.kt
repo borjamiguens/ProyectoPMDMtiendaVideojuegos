@@ -14,14 +14,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FieldText() {
+fun FieldText(
+              title: String,
+              label: String,
+              modifier: Modifier = Modifier
+)  {
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
         Text(
-            text = "Introduce nombre usuario:",
+            text = title ,
             style = MaterialTheme.typography.titleMedium
         )
 
@@ -30,7 +35,7 @@ fun FieldText() {
         TextField(
             value = "",
             onValueChange = {}, // sin funcionalidad
-            label = { Text("Usuario") },
+            label = { Text(label) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
@@ -41,6 +46,9 @@ fun FieldText() {
 @Composable
 fun FieldTextPreview() {
     MaterialTheme {
-        FieldText()
+        FieldText(
+            title = "Introduce nombre Eva:",
+            label = "elp"
+        )
     }
 }

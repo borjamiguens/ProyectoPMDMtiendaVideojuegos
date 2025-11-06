@@ -28,81 +28,35 @@ fun GenericListPage(
 
     val verticalScrollState = rememberScrollState()
 
-    Scaffold(
-        containerColor = Color(0xFF0d0d0d),
-        topBar = {
-            Row(
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF0d0d0d))
+            .verticalScroll(verticalScrollState),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Title(name = title)
+
+        Spacer(modifier = Modifier.height(25.dp))
+
+        items.forEach { item ->
+            ImageTextRow(
+                txtMsg = item.name,
+                imageIdR = item.imageResId,
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0xFF0d0d0d))
-                    .padding(top = 15.dp, start = 15.dp, end = 15.dp),
-                verticalAlignment = Alignment.CenterVertically
+                    .height(80.dp)
+                    .width(300.dp)
             ) {
-                Logo(
-                    logo = R.drawable.imagen_prueba,
-                    name = "NOMBRE",
-                    modifier = Modifier
-                ) { }
-
-                Spacer(modifier = Modifier.width(15.dp))
-
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                ) {
-                    Search(modifier = Modifier.height(40.dp)) { }
-                }
+                onItemClick(item)
             }
-        },
 
-        bottomBar = {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0xFF0d0d0d))
-                    .padding(vertical = 10.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                BottomBarButton(Icons.Filled.Home, "HOME") { }
-                BottomBarButton(Icons.Filled.VideogameAsset, "CONSOLAS") { }
-                BottomBarButton(Icons.Filled.Category, "CATEGORIAS") { }
-                BottomBarButton(Icons.Filled.Login, "LOGIN") { }
-                BottomBarButton(Icons.Filled.Person, "PERFIL") { }
-            }
-        }
-    ) { paddingValues ->
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color(0xFF0d0d0d))
-                .verticalScroll(verticalScrollState)
-                .padding(paddingValues),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(modifier = Modifier.height(20.dp))
-
-            Title(name = title)
-
-            Spacer(modifier = Modifier.height(25.dp))
-
-            items.forEach { item ->
-                ImageTextRow(
-                    txtMsg = item.name,
-                    imageIdR = item.imageResId,
-                    modifier = Modifier
-                        .height(80.dp)
-                        .width(300.dp)
-                ) {
-                    onItemClick(item)
-                }
-
-                Spacer(modifier = Modifier.height(40.dp))
-            }
+            Spacer(modifier = Modifier.height(40.dp))
         }
     }
 }
+
 
 
 @Preview()

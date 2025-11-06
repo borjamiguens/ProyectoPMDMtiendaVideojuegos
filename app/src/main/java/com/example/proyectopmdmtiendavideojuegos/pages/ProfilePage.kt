@@ -30,17 +30,17 @@ fun ProfilePage() {
         Spacer(modifier = Modifier.height(24.dp))
 
         // Campo de nombre
-        FieldText()
+        FieldText("Nombre", "Pepito")
         Spacer(modifier = Modifier.height(16.dp))
         // Campo de Direccion
-        FieldText()
+        FieldText("Dirección", "Pepito")
         Spacer(modifier = Modifier.height(16.dp))
         // Campo de alias
-        FieldText()
+        FieldText("Edad", "Pepito")
         Spacer(modifier = Modifier.height(16.dp))
 
         // Campo de alias
-        FieldText()
+        FieldText("DNI", "Pepito")
         Spacer(modifier = Modifier.height(16.dp))
 
 

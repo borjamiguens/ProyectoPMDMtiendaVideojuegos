@@ -34,6 +34,7 @@ import com.example.proyectopmdmtiendavideojuegos.myComponents.BottomBarButton
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ImageTextColumn
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Logo
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Title
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
 fun MainPage() {
@@ -50,8 +51,8 @@ fun MainPage() {
         val imagenResId: Int
     )
 
-    val juegosMasVendidos = listaVideojuegos
-        .sortedByDescending { it.numVentas }
+    val juegosDestacados = listaVideojuegos
+        .sortedByDescending { it.numAlquilados }
         .take(8)
         .map { juego ->
             ImageTextColumnData(
@@ -62,29 +63,18 @@ fun MainPage() {
             )
         }
 
-        val juegosMasVendidos = listaVideojuegos
-            .sortedByDescending { it.numAlquilados }
-            .take(8)
-            .map { juego ->
-                ImageTextColumnData(
-                    txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.categoryName,
-                    txtConsola = juego.consola.random().consoleName,
-                    imagenResId = juego.imagenResId
-                )
-            }
+    val juegosRecientes = listaVideojuegos
+        .takeLast(8)
+        .reversed()
+        .map { juego ->
+            ImageTextColumnData(
+                txtTitle = juego.nombre,
+                txtCategoria = juego.categoria.categoryName,
+                txtConsola = juego.consola.random().consoleName,
+                imagenResId = juego.imagenResId
+            )
+        }
 
-        val juegosRecientes = listaVideojuegos
-            .takeLast(8)
-            .reversed()
-            .map { juego ->
-                ImageTextColumnData(
-                    txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.categoryName,
-                    txtConsola = juego.consola.random().consoleName,
-                    imagenResId = juego.imagenResId
-                )
-            }
 
     val juegosAleatorios = listaVideojuegos
         .take(8)
@@ -125,7 +115,7 @@ fun MainPage() {
                     .horizontalScroll(horizontalScrollStateJuegosMasVendidos)
                     .padding(top = 15.dp, start = 15.dp)
             ) {
-                juegosMasVendidos.forEach { item ->
+                juegosDestacados.forEach { item ->
                     ImageTextColumn(
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
@@ -147,7 +137,6 @@ fun MainPage() {
                 name = "JUEGOS RECIENTES",
             )
         }
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -175,7 +164,6 @@ fun MainPage() {
                 name = "JUEGOS ALEATORIOS",
             )
         }
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -199,5 +187,7 @@ fun MainPage() {
 @Preview
 @Composable
 fun MainPagePreview() {
-    MainPage()
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+        MainPage()
+    }
 }

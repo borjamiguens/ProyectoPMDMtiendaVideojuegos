@@ -62,17 +62,29 @@ fun MainPage() {
             )
         }
 
-    val juegosRecientes = listaVideojuegos
-        .takeLast(8)
-        .reversed()
-        .map { juego ->
-            ImageTextColumnData(
-                txtTitle = juego.nombre,
-                txtCategoria = juego.categoria.categoryName,
-                txtConsola = juego.consola.random().consoleName,
-                imagenResId = juego.imagenResId
-            )
-        }
+        val juegosMasVendidos = listaVideojuegos
+            .sortedByDescending { it.numAlquilados }
+            .take(8)
+            .map { juego ->
+                ImageTextColumnData(
+                    txtTitle = juego.nombre,
+                    txtCategoria = juego.categoria.categoryName,
+                    txtConsola = juego.consola.random().consoleName,
+                    imagenResId = juego.imagenResId
+                )
+            }
+
+        val juegosRecientes = listaVideojuegos
+            .takeLast(8)
+            .reversed()
+            .map { juego ->
+                ImageTextColumnData(
+                    txtTitle = juego.nombre,
+                    txtCategoria = juego.categoria.categoryName,
+                    txtConsola = juego.consola.random().consoleName,
+                    imagenResId = juego.imagenResId
+                )
+            }
 
     val juegosAleatorios = listaVideojuegos
         .take(8)
@@ -97,24 +109,31 @@ fun MainPage() {
                 .padding(top = 25.dp),
             contentAlignment = Alignment.Center
         ) {
-            Title(
-                name = "JUEGOS MÁS VENDIDOS",
-            )
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(horizontalScrollStateJuegosMasVendidos)
-                .padding(top = 15.dp, start = 15.dp)
-        ) {
-            juegosMasVendidos.forEach { item ->
-                ImageTextColumn(
-                    txtTitle = item.txtTitle,
-                    txtCategoria = item.txtCategoria,
-                    txtConsola = item.txtConsola,
-                    imagenResId = item.imagenResId,
-                ) { }
-                Spacer(modifier = Modifier.width(15.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 25.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Title(
+                    name = "JUEGOS DESTACADOS",
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(horizontalScrollStateJuegosMasVendidos)
+                    .padding(top = 15.dp, start = 15.dp)
+            ) {
+                juegosMasVendidos.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imagenResId = item.imagenResId,
+                    ) { }
+                    Spacer(modifier = Modifier.width(15.dp))
+                }
             }
         }
 

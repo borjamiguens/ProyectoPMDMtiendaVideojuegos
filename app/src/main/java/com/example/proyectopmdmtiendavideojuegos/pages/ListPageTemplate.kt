@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,6 +19,7 @@ import com.example.proyectopmdmtiendavideojuegos.R
 import com.example.proyectopmdmtiendavideojuegos.data.model.VideojuegoData.listaVideojuegos
 import com.example.proyectopmdmtiendavideojuegos.model.MyListItem
 import com.example.proyectopmdmtiendavideojuegos.myComponents.*
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
 fun GenericListPage(
@@ -31,7 +33,7 @@ fun GenericListPage(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0d0d0d))
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(verticalScrollState),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -61,19 +63,40 @@ fun GenericListPage(
 
 @Preview()
 @Composable
-fun GenericListPagePreview() {
+fun GenericListPagePreview1() {
+    ProyectoPMDMtiendaVideojuegosTheme (darkTheme = false) {
+        val juegosAleatorios = listaVideojuegos
+            .take(8)
+            .map { juego ->
+                MyListItem(
+                    name = juego.nombre,
+                    imageResId = juego.imagenResId
+                )
+            }.shuffled()
 
-    val juegosAleatorios = listaVideojuegos
-        .take(8)
-        .map { juego ->
-            MyListItem(
-                name = juego.nombre,
-                imageResId = juego.imagenResId
-            )
-        }.shuffled()
+        GenericListPage(
+            title = "JUEGOS ALEATORIOS",
+            items = juegosAleatorios
+        ) { }
+    }
+}
 
-    GenericListPage(
-        title = "JUEGOS ALEATORIOS",
-        items = juegosAleatorios
-    ) { }
+@Preview()
+@Composable
+fun GenericListPagePreview2() {
+    ProyectoPMDMtiendaVideojuegosTheme (darkTheme = true) {
+        val juegosAleatorios = listaVideojuegos
+            .take(8)
+            .map { juego ->
+                MyListItem(
+                    name = juego.nombre,
+                    imageResId = juego.imagenResId
+                )
+            }.shuffled()
+
+        GenericListPage(
+            title = "JUEGOS ALEATORIOS",
+            items = juegosAleatorios
+        ) { }
+    }
 }

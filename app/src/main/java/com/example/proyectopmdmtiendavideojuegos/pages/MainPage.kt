@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -21,6 +22,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Login
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.VideogameAsset
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -87,28 +89,25 @@ fun MainPage() {
             )
         }.shuffled()
 
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0d0d0d))
-            .verticalScroll(verticalScrollState)
+            .background(MaterialTheme.colorScheme.background)
+            .verticalScroll(verticalScrollState),
     ) {
-        Box(
+
+        // JUEGOS DESTACADOS
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp),
-            contentAlignment = Alignment.Center
+                .padding(top = 25.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 25.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Title(
-                    name = "JUEGOS DESTACADOS",
-                )
-            }
+
+            Title(
+                name = "JUEGOS DESTACADOS"
+            )
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -127,57 +126,61 @@ fun MainPage() {
             }
         }
 
-        Box(
+        // JUEGOS RECIENTES
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp),
-            contentAlignment = Alignment.Center
+                .padding(top = 25.dp)
         ) {
             Title(
                 name = "JUEGOS RECIENTES",
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(horizontalScrollStateJuegosRecientes)
-                .padding(top = 15.dp, start = 15.dp)
-        ) {
-            juegosRecientes.forEach { item ->
-                ImageTextColumn(
-                    txtTitle = item.txtTitle,
-                    txtCategoria = item.txtCategoria,
-                    txtConsola = item.txtConsola,
-                    imagenResId = item.imagenResId,
-                ) { }
-                Spacer(modifier = Modifier.width(15.dp))
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(horizontalScrollStateJuegosRecientes)
+                    .padding(top = 15.dp, start = 15.dp)
+            ) {
+                juegosRecientes.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imagenResId = item.imagenResId,
+                    ) { }
+                    Spacer(modifier = Modifier.width(15.dp))
+                }
             }
         }
 
-        Box(
+        // JUEGOS ALEATORIOS
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp),
-            contentAlignment = Alignment.Center
+                .padding(top = 25.dp)
         ) {
             Title(
                 name = "JUEGOS ALEATORIOS",
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(horizontalScrollStateJuegosAleatorios)
-                .padding(top = 15.dp, start = 15.dp)
-        ) {
-            juegosAleatorios.forEach { item ->
-                ImageTextColumn(
-                    txtTitle = item.txtTitle,
-                    txtCategoria = item.txtCategoria,
-                    txtConsola = item.txtConsola,
-                    imagenResId = item.imagenResId,
-                ) { }
-                Spacer(modifier = Modifier.width(15.dp))
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(horizontalScrollStateJuegosAleatorios)
+                    .padding(top = 15.dp, start = 15.dp)
+            ) {
+                juegosAleatorios.forEach { item ->
+                    ImageTextColumn(
+                        txtTitle = item.txtTitle,
+                        txtCategoria = item.txtCategoria,
+                        txtConsola = item.txtConsola,
+                        imagenResId = item.imagenResId,
+                    ) { }
+                    Spacer(modifier = Modifier.width(15.dp))
+                }
             }
         }
     }
@@ -186,8 +189,16 @@ fun MainPage() {
 
 @Preview
 @Composable
-fun MainPagePreview() {
+fun MainPagePreview1() {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+        MainPage()
+    }
+}
+
+@Preview
+@Composable
+fun MainPagePreview2() {
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false) {
         MainPage()
     }
 }

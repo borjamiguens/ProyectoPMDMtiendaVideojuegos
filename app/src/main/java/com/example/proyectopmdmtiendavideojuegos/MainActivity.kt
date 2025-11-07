@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ProyectoPMDMtiendaVideojuegosTheme {
+            ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
                 Scaffold(
                     containerColor = Color(0xFF0d0d0d),
                     topBar = {
@@ -54,7 +54,6 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     },
-
                     bottomBar = {
                         Row(
                             modifier = Modifier
@@ -72,34 +71,13 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) { innerPadding ->
-
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding)
-                            .background(Color.Black),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Contenido principal", color = Color.White)
-                    }
-
-                    MainPage()
-
+                    MainPage(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable fun GreetingPreview() {
-    ProyectoPMDMtiendaVideojuegosTheme { MainPage() }}
+    ProyectoPMDMtiendaVideojuegosTheme { MainPage(modifier = Modifier) }}

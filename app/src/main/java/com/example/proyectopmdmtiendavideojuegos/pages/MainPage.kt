@@ -1,10 +1,8 @@
 package com.example.proyectopmdmtiendavideojuegos.pages
 
-import Search
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -12,34 +10,23 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Category
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Login
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.VideogameAsset
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.proyectopmdmtiendavideojuegos.R
 import com.example.proyectopmdmtiendavideojuegos.data.model.VideojuegoData.listaVideojuegos
-import com.example.proyectopmdmtiendavideojuegos.myComponents.BottomBarButton
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ImageTextColumn
-import com.example.proyectopmdmtiendavideojuegos.myComponents.Logo
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Title
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
-fun MainPage() {
+fun MainPage(modifier: Modifier = Modifier) {
 
     val verticalScrollState = rememberScrollState()
     val horizontalScrollStateJuegosMasVendidos = rememberScrollState()
@@ -77,7 +64,6 @@ fun MainPage() {
             )
         }
 
-
     val juegosAleatorios = listaVideojuegos
         .take(8)
         .map { juego ->
@@ -89,48 +75,52 @@ fun MainPage() {
             )
         }.shuffled()
 
-
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .verticalScroll(verticalScrollState),
+            .verticalScroll(verticalScrollState)
     ) {
 
         // JUEGOS DESTACADOS
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp)
+                .padding(horizontal = 16.dp, vertical = 12.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(MaterialTheme.colorScheme.surface)
+                .padding(vertical = 20.dp)
         ) {
-
-            Title(
-                name = "JUEGOS DESTACADOS"
-            )
+            Title(name = "JUEGOS DESTACADOS")
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .horizontalScroll(horizontalScrollStateJuegosMasVendidos)
-                    .padding(top = 15.dp, start = 15.dp)
+                    .padding(top = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 juegosDestacados.forEach { item ->
                     ImageTextColumn(
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imagenResId = item.imagenResId,
+                        imagenResId = item.imagenResId
                     ) { }
-                    Spacer(modifier = Modifier.width(15.dp))
                 }
             }
         }
+
+        Spacer(modifier = Modifier.height(24.dp))
 
         // JUEGOS RECIENTES
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp)
+                .padding(horizontal = 16.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(MaterialTheme.colorScheme.surface)
+                .padding(vertical = 20.dp)
         ) {
             Title(
                 name = "JUEGOS RECIENTES",
@@ -141,25 +131,30 @@ fun MainPage() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .horizontalScroll(horizontalScrollStateJuegosRecientes)
-                    .padding(top = 15.dp, start = 15.dp)
+                    .padding(top = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 juegosRecientes.forEach { item ->
                     ImageTextColumn(
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imagenResId = item.imagenResId,
+                        imagenResId = item.imagenResId
                     ) { }
-                    Spacer(modifier = Modifier.width(15.dp))
                 }
             }
         }
+
+        Spacer(modifier = Modifier.height(24.dp))
 
         // JUEGOS ALEATORIOS
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 25.dp)
+                .padding(horizontal = 16.dp, vertical = 12.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(MaterialTheme.colorScheme.surface)
+                .padding(vertical = 20.dp)
         ) {
             Title(
                 name = "JUEGOS ALEATORIOS",
@@ -170,20 +165,21 @@ fun MainPage() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .horizontalScroll(horizontalScrollStateJuegosAleatorios)
-                    .padding(top = 15.dp, start = 15.dp)
+                    .padding(top = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 juegosAleatorios.forEach { item ->
                     ImageTextColumn(
                         txtTitle = item.txtTitle,
                         txtCategoria = item.txtCategoria,
                         txtConsola = item.txtConsola,
-                        imagenResId = item.imagenResId,
+                        imagenResId = item.imagenResId
                     ) { }
-                    Spacer(modifier = Modifier.width(15.dp))
                 }
             }
         }
     }
+
 }
 
 

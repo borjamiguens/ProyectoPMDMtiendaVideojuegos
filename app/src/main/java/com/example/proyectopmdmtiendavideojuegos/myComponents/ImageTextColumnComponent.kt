@@ -40,7 +40,7 @@ fun ImageTextColumn(
             .background(MaterialTheme.colorScheme.primary)
             .border(
                 width = 1.dp,
-                color = Color.White.copy(alpha = 0.1f),
+                color = Color.White.copy(alpha = 0.3f),
                 shape = RoundedCornerShape(12.dp)
             )
             .clickable { action.invoke() }

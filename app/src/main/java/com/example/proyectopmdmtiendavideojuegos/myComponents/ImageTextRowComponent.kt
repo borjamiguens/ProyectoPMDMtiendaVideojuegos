@@ -45,7 +45,7 @@ fun ImageTextRow(
         modifier = modifier
             .border(
                 width = 1.dp,
-                color = Color.White.copy(alpha = 0.1f),
+                color = Color.White.copy(alpha = 0.4f),
                 shape = RoundedCornerShape(12.dp)
             )
             .clip(RoundedCornerShape(12.dp))

@@ -37,6 +37,7 @@ fun GenericListPage(
             .verticalScroll(verticalScrollState),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Spacer(modifier = Modifier.height(20.dp))
 
         Title(name = title)
@@ -49,12 +50,12 @@ fun GenericListPage(
                 imageIdR = item.imageResId,
                 modifier = Modifier
                     .height(80.dp)
-                    .width(300.dp)
+                    .width(320.dp)
             ) {
                 onItemClick(item)
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(30.dp))
         }
     }
 }

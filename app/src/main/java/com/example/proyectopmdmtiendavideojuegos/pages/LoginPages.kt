@@ -35,9 +35,9 @@ fun Login() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Campo de usuario
-            FieldText("Usuario")
-            Spacer(modifier = Modifier.height(16.dp))
+        // Campo de usuario
+        FieldText("Usuario")
+        Spacer(modifier = Modifier.height(16.dp))
 
             // Campo de contraseña
             Password()

@@ -17,45 +17,45 @@ import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVide
 fun Login() {
     //val username
     //val passwordname
-Box(
-    modifier = Modifier
-        .background(MaterialTheme.colorScheme.background)
-) {
-    Column(
+    Box(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .background(MaterialTheme.colorScheme.background)
     ) {
-        Text(
-            text = "Iniciar sesión",
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Campo de usuario
-        FieldText("Usuario", "Usuario")
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Campo de contraseña
-        Password()
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Button(
-            onClick = { },
-            modifier = Modifier.fillMaxWidth()
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(24.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Entrar")
+            Text(
+                text = "Iniciar sesión",
+                style = MaterialTheme.typography.headlineMedium
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Campo de usuario
+            FieldText("Usuario")
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Campo de contraseña
+            Password()
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Button(
+                onClick = { },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Entrar")
+            }
         }
     }
-}
 }
 
 @Preview(showBackground = true)
 @Composable
-fun LoginPreview() {
+fun LoginPreview1() {
     ProyectoPMDMtiendaVideojuegosTheme (darkTheme = false) {
        Login()
     }

@@ -8,15 +8,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.font.FontWeight
 import com.example.proyectopmdmtiendavideojuegos.myComponents.FieldText
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Password
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 
+//Página para realizar el login
 @Composable
 fun Login() {
-    //val username
-    //val passwordname
+
 Box(
     modifier = Modifier
         .background(MaterialTheme.colorScheme.background)
@@ -28,32 +29,39 @@ Box(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        //Título de la página
         Text(
+            modifier = Modifier,
             text = "Iniciar sesión",
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold
         )
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Campo de usuario
+        //Campo de usuario
         FieldText("Usuario")
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo de contraseña
-        Password()
+        //Campo de password
+        Password("Pass")
         Spacer(modifier = Modifier.height(24.dp))
 
+        //Botón para introducir credenciales
         Button(
             onClick = { },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Entrar")
+            Text("Entrar",
+                modifier = Modifier,
+                fontWeight = FontWeight.Bold)
         }
     }
 }
 }
 
-@Preview(showBackground = true)
+//Preview tema oscuro
+@Preview
 @Composable
 fun LoginPreview() {
     ProyectoPMDMtiendaVideojuegosTheme (darkTheme = false) {
@@ -61,7 +69,8 @@ fun LoginPreview() {
     }
 }
 
-@Preview(showBackground = false)
+//Preview tema claro
+@Preview
 @Composable
 fun LoginPreview2() {
     ProyectoPMDMtiendaVideojuegosTheme (darkTheme = true) {

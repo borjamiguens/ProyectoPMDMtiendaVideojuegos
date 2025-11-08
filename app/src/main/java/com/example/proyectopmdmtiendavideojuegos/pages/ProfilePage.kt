@@ -3,12 +3,9 @@ package com.example.proyectopmdmtiendavideojuegos.pages
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CameraAlt
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -19,10 +16,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.TextUnit
 import com.example.proyectopmdmtiendavideojuegos.myComponents.FieldText
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ProfileField
-import com.example.proyectopmdmtiendavideojuegos.myComponents.ProfileFieldList
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 import com.example.proyectopmdmtiendavideojuegos.R
 
@@ -82,7 +77,7 @@ fun ProfilePage() {
                 ) {
                     //Imagen de usuario
                     Image(
-                        painter = painterResource(id = R.drawable.juego_rdr2),
+                        painter = painterResource(id = R.drawable.juego_red_dead_redemption_2),
                         contentDescription = "txtTitle",
                         modifier = Modifier
                             .fillMaxWidth(0.4f),

@@ -32,6 +32,8 @@ fun Logo(
             .clickable { action() },
         verticalAlignment = Alignment.CenterVertically
     ) {
+
+        // Imagen del logo
         Image(
             painter = painterResource(id = logo),
             contentDescription = name,
@@ -41,6 +43,7 @@ fun Logo(
 
         Spacer(modifier = Modifier.width(10.dp))
 
+        // Nombre
         Text(
             text = name,
             color = Color.White,

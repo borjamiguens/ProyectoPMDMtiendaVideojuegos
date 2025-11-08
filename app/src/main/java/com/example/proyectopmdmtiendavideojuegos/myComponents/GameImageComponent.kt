@@ -33,7 +33,7 @@ fun GameImage(
                 .clip(shape = RoundedCornerShape(4.dp))
                 .border(
                     width = 4.dp,
-                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f),
+                    color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
                     shape = RoundedCornerShape(4.dp)
                 ),
             contentScale = ContentScale.Fit

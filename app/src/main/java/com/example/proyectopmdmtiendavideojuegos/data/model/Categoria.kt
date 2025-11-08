@@ -2,6 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.data.model
 
 import com.example.proyectopmdmtiendavideojuegos.R
 
+// Enumeración de categorías
 enum class Categoria(val categoryName: String, val imageResId: Int) {
     AVENTURA(categoryName = "Aventura", imageResId = R.drawable.categoria_aventura),
     ACCION(categoryName = "Acción", imageResId = R.drawable.categoria_accion),

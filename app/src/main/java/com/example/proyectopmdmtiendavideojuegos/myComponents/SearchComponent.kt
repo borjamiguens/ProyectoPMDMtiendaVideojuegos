@@ -32,13 +32,14 @@ fun Search(
         contentAlignment = Alignment.Center
 
     )
+
     {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
-
+            // Recuadro de búsqueda
             OutlinedTextField(
                 modifier = Modifier
                     .fillMaxWidth(0.75f)
@@ -52,6 +53,7 @@ fun Search(
 
             Spacer(modifier = Modifier.width(15.dp))
 
+            // Icono lupa
             Icon(
                 imageVector = Icons.Filled.Search,
                 contentDescription = "Buscar",

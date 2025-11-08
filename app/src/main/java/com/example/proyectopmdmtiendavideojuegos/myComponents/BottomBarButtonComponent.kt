@@ -33,6 +33,8 @@ fun BottomBarButton(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+
+        // Icono
         Icon(
             imageVector = icon,
             contentDescription = text,
@@ -41,6 +43,8 @@ fun BottomBarButton(
                 .size(28.dp)
                 .padding(bottom = 4.dp)
         )
+
+        // Texto
         Text(
             text = text,
             color = tint,

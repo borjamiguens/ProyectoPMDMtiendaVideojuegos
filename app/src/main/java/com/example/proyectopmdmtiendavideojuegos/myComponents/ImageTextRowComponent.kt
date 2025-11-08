@@ -43,13 +43,15 @@ fun ImageTextRow(
     Row(
         modifier = modifier
             .border(
-                width = 1.dp,
-                color = Color.White.copy(alpha = 0.4f),
+                width = 2.dp,
+                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.6f),
                 shape = RoundedCornerShape(12.dp)
             )
             .clip(RoundedCornerShape(12.dp))
             .clickable { action.invoke() }
     ) {
+        
+        // Imagen
         Box(
             modifier = Modifier
                 .fillMaxHeight()
@@ -57,36 +59,25 @@ fun ImageTextRow(
         ) {
             Image(
                 painter = painterResource(id = imageIdR),
-                contentDescription = "",
+                contentDescription = txtMsg,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
         }
 
+        // Título
         Box(
             modifier = Modifier
                 .fillMaxHeight()
                 .weight(1f)
-                .background(MaterialTheme.colorScheme.primary),
+                .background(MaterialTheme.colorScheme.surface),
             contentAlignment = Alignment.CenterStart
         ) {
             Text(
                 text = txtMsg,
-                fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.4f),
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Clip,
-                modifier = Modifier
-                    .padding(start = 10.dp)
-                    .offset(x = 1.dp, y = 1.dp)
-            )
-
-            Text(
-                text = txtMsg,
                 modifier = Modifier.padding(start = 10.dp),
                 fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onPrimary,
+                color = MaterialTheme.colorScheme.onSurface,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Clip
@@ -99,7 +90,7 @@ fun ImageTextRow(
 @Composable
 fun ImageTextRowPreview () {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
-        ImageTextRow(txtMsg = "TEXTO", R.drawable.juego_red_dead_redemption_2) { }
+        ImageTextRow(txtMsg = "RDR 2", R.drawable.juego_red_dead_redemption_2) { }
     }
 }
 

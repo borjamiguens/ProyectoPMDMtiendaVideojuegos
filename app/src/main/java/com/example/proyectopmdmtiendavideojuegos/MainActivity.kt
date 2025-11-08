@@ -19,8 +19,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.proyectopmdmtiendavideojuegos.myComponents.BottomBarButton
 import com.example.proyectopmdmtiendavideojuegos.myComponents.Logo
+import com.example.proyectopmdmtiendavideojuegos.pages.DetailPage
 import com.example.proyectopmdmtiendavideojuegos.pages.MainPage
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
+import kotlin.collections.first
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,13 +73,21 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) { innerPadding ->
-                    MainPage(modifier = Modifier.padding(innerPadding))
+                    val juego = com.example.proyectopmdmtiendavideojuegos.data.model.VideojuegoData.listaVideojuegos
+                        .first { it.id == 2 }
+
+                    DetailPage(
+                        txtTitle = juego.nombre,
+                        txtCategoria = juego.categoria.categoryName,
+                        txtDescripcion = juego.descripcion,
+                        consolas = juego.consola,
+                        precio = juego.precio,
+                        unidadesDisponibles = juego.unidadesDisponibles,
+                        imagenResId = juego.imagenResId,
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable fun GreetingPreview() {
-    ProyectoPMDMtiendaVideojuegosTheme { MainPage(modifier = Modifier) }}

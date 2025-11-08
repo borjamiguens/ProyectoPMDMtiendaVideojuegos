@@ -40,6 +40,7 @@ fun MainPage(modifier: Modifier = Modifier) {
         val imagenResId: Int
     )
 
+    // Selección de videojuegos
     val juegosDestacados = listaVideojuegos
         .sortedByDescending { it.numAlquilados }
         .take(8)
@@ -52,6 +53,7 @@ fun MainPage(modifier: Modifier = Modifier) {
             )
         }
 
+    // Selección de videojuegos
     val juegosRecientes = listaVideojuegos
         .takeLast(8)
         .reversed()
@@ -64,6 +66,7 @@ fun MainPage(modifier: Modifier = Modifier) {
             )
         }
 
+    // Selección de videojuegos
     val juegosAleatorios = listaVideojuegos
         .take(8)
         .map { juego ->
@@ -91,8 +94,10 @@ fun MainPage(modifier: Modifier = Modifier) {
                 .background(MaterialTheme.colorScheme.surface)
                 .padding(vertical = 20.dp)
         ) {
+            // Título
             Title(name = "JUEGOS DESTACADOS")
 
+            // Listado de videojuegos
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -122,11 +127,13 @@ fun MainPage(modifier: Modifier = Modifier) {
                 .background(MaterialTheme.colorScheme.surface)
                 .padding(vertical = 20.dp)
         ) {
+            // Título
             Title(
                 name = "JUEGOS RECIENTES",
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
 
+            // Listado de videojuegos
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -156,11 +163,13 @@ fun MainPage(modifier: Modifier = Modifier) {
                 .background(MaterialTheme.colorScheme.surface)
                 .padding(vertical = 20.dp)
         ) {
+            // Título
             Title(
                 name = "JUEGOS ALEATORIOS",
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
 
+            // Listado de videojuegos
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -179,7 +188,6 @@ fun MainPage(modifier: Modifier = Modifier) {
             }
         }
     }
-
 }
 
 

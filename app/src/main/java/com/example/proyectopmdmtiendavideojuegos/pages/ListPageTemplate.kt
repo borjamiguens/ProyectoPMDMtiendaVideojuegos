@@ -41,10 +41,12 @@ fun GenericListPage(
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Título
         Title(name = title)
 
         Spacer(modifier = Modifier.height(25.dp))
 
+        // Lista de videojuegos
         items.forEach { item ->
             ImageTextRow(
                 txtMsg = item.name,

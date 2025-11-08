@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -100,7 +99,7 @@ fun ImageTextRow(
 @Composable
 fun ImageTextRowPreview () {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
-        ImageTextRow(txtMsg = "TEXTO", R.drawable.juego_rdr2) { }
+        ImageTextRow(txtMsg = "TEXTO", R.drawable.juego_red_dead_redemption_2) { }
     }
 }
 
@@ -108,6 +107,6 @@ fun ImageTextRowPreview () {
 @Composable
 fun ImageTextRowPreview2 () {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false){
-        ImageTextRow(txtMsg = "RDR 2",  R.drawable.juego_rdr2) { }
+        ImageTextRow(txtMsg = "RDR 2",  R.drawable.juego_red_dead_redemption_2) { }
     }
 }

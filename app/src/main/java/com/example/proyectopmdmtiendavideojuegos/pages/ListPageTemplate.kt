@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.proyectopmdmtiendavideojuegos.R
+import com.example.proyectopmdmtiendavideojuegos.data.model.Categoria
 import com.example.proyectopmdmtiendavideojuegos.data.model.VideojuegoData.listaVideojuegos
 import com.example.proyectopmdmtiendavideojuegos.model.MyListItem
 import com.example.proyectopmdmtiendavideojuegos.myComponents.*
@@ -84,20 +85,19 @@ fun GenericListPagePreview1() {
 
 @Preview()
 @Composable
-fun GenericListPagePreview2() {
-    ProyectoPMDMtiendaVideojuegosTheme (darkTheme = true) {
-        val juegosAleatorios = listaVideojuegos
-            .take(8)
-            .map { juego ->
-                MyListItem(
-                    name = juego.nombre,
-                    imageResId = juego.imagenResId
-                )
-            }.shuffled()
+fun GenericListPagePreviewCategorias() {
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+
+        val listaCategoriasItems = Categoria.entries.map { categoria ->
+            MyListItem(
+                name = categoria.categoryName,
+                imageResId = categoria.imageResId
+            )
+        }
 
         GenericListPage(
-            title = "JUEGOS ALEATORIOS",
-            items = juegosAleatorios
+            title = "CATEGORÍAS",
+            items = listaCategoriasItems
         ) { }
     }
 }

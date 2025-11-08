@@ -13,7 +13,7 @@ object VideojuegoData {
             precio = 69.99,
             unidadesDisponibles = 25,
             numAlquilados = 67,
-            imagenResId = R.drawable.juego_zeldatotk
+            imagenResId = R.drawable.juego_zelda_tears_of_the_kingdom
         ),
         Videojuego(
             id = 2,
@@ -24,7 +24,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 40,
             numAlquilados = 120,
-            imagenResId = R.drawable.juego_rdr2
+            imagenResId = R.drawable.juego_red_dead_redemption_2
         ),
         Videojuego(
             id = 3,
@@ -62,7 +62,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 35,
             numAlquilados = 95,
-            imagenResId = R.drawable.juego_mariokart8
+            imagenResId = R.drawable.juego_mario_kart_8
         ),
         Videojuego(
             id = 6,
@@ -73,7 +73,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 30,
             numAlquilados = 77,
-            imagenResId = R.drawable.juego_pokemonsword
+            imagenResId = R.drawable.juego_pokemon_sword
         ),
         Videojuego(
             id = 7,
@@ -95,7 +95,7 @@ object VideojuegoData {
             precio = 69.99,
             unidadesDisponibles = 50,
             numAlquilados = 140,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_god_of_war_ragnarok
         ),
         Videojuego(
             id = 9,
@@ -111,18 +111,18 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 70,
             numAlquilados = 200,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_fifa_23
         ),
         Videojuego(
             id = 10,
-            nombre = "GTA V",
+            nombre = "Grand Theft Auto V",
             descripcion = "GTA V te lleva a Los Santos, una ciudad viva llena de crimen, acción y humor negro, donde tres protagonistas buscan fortuna a su manera.",
             categoria = Categoria.ACCION,
             consola = listOf(Consola.PC, Consola.PLAYSTATION_5, Consola.XBOX_SERIES_X),
             precio = 29.99,
             unidadesDisponibles = 150,
             numAlquilados = 450,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_grand_theft_auto_v
         ),
         Videojuego(
             id = 11,
@@ -133,7 +133,7 @@ object VideojuegoData {
             precio = 69.99,
             unidadesDisponibles = 65,
             numAlquilados = 180,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_call_of_duty_modern_warfare_2
         ),
         Videojuego(
             id = 12,
@@ -150,7 +150,7 @@ object VideojuegoData {
             precio = 39.99,
             unidadesDisponibles = 90,
             numAlquilados = 260,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_the_witcher_3
         ),
         Videojuego(
             id = 13,
@@ -161,7 +161,7 @@ object VideojuegoData {
             precio = 49.99,
             unidadesDisponibles = 50,
             numAlquilados = 150,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_cyberpunk_2077
         ),
         Videojuego(
             id = 14,
@@ -172,7 +172,7 @@ object VideojuegoData {
             precio = 69.99,
             unidadesDisponibles = 35,
             numAlquilados = 90,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_horizon_forbidden_west
         ),
         Videojuego(
             id = 15,
@@ -183,7 +183,7 @@ object VideojuegoData {
             precio = 69.99,
             unidadesDisponibles = 30,
             numAlquilados = 75,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_gran_turismo_5
         ),
         Videojuego(
             id = 16,
@@ -194,7 +194,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 30,
             numAlquilados = 85,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_forza_horizon_5
         ),
         Videojuego(
             id = 17,
@@ -205,7 +205,7 @@ object VideojuegoData {
             precio = 49.99,
             unidadesDisponibles = 50,
             numAlquilados = 160,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_animal_crossing_new_horizons
         ),
         Videojuego(
             id = 18,
@@ -216,7 +216,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 45,
             numAlquilados = 130,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_super_mario_odyssey
         ),
         Videojuego(
             id = 19,
@@ -227,7 +227,7 @@ object VideojuegoData {
             precio = 49.99,
             unidadesDisponibles = 15,
             numAlquilados = 45,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_luigi_s_mansion_3
         ),
         Videojuego(
             id = 20,
@@ -243,7 +243,7 @@ object VideojuegoData {
             precio = 24.99,
             unidadesDisponibles = 20,
             numAlquilados = 70,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_hades
         ),
         Videojuego(
             id = 21,
@@ -254,7 +254,7 @@ object VideojuegoData {
             precio = 19.99,
             unidadesDisponibles = 8,
             numAlquilados = 25,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_celeste
         ),
         Videojuego(
             id = 22,
@@ -270,7 +270,7 @@ object VideojuegoData {
             precio = 14.99,
             unidadesDisponibles = 45,
             numAlquilados = 120,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_stardew_valley
         ),
         Videojuego(
             id = 23,
@@ -281,7 +281,7 @@ object VideojuegoData {
             precio = 39.99,
             unidadesDisponibles = 25,
             numAlquilados = 80,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_dark_souls_3
         ),
         Videojuego(
             id = 24,
@@ -292,7 +292,7 @@ object VideojuegoData {
             precio = 49.99,
             unidadesDisponibles = 20,
             numAlquilados = 60,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_sekiro
         ),
         Videojuego(
             id = 25,
@@ -303,7 +303,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 18,
             numAlquilados = 50,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_persona_5
         ),
         Videojuego(
             id = 26,
@@ -314,7 +314,7 @@ object VideojuegoData {
             precio = 49.99,
             unidadesDisponibles = 25,
             numAlquilados = 65,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_monster_hunter_rise
         ),
         Videojuego(
             id = 27,
@@ -325,7 +325,7 @@ object VideojuegoData {
             precio = 39.99,
             unidadesDisponibles = 18,
             numAlquilados = 55,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_splatoon_2
         ),
         Videojuego(
             id = 28,
@@ -336,7 +336,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 15,
             numAlquilados = 40,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_metroid_dread
         ),
         Videojuego(
             id = 29,
@@ -347,7 +347,7 @@ object VideojuegoData {
             precio = 29.99,
             unidadesDisponibles = 7,
             numAlquilados = 20,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_tetris_effect
         ),
         Videojuego(
             id = 30,
@@ -358,7 +358,7 @@ object VideojuegoData {
             precio = 59.99,
             unidadesDisponibles = 35,
             numAlquilados = 110,
-            imagenResId = R.drawable.imagen_prueba
+            imagenResId = R.drawable.juego_resident_evil_village
         )
     )
 }

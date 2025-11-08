@@ -22,38 +22,36 @@ El color de fondo -> color de base de la app.
 El color de superficie -> color de las tarjetas o paneles.
 El color de texto (onPrimary, onBackground, etc.) -> color de texto se usa sobre esos fondos.*/
 private val DarkColorScheme = darkColorScheme(
-    /*primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80*/
     primary = DarkAccent,
     onPrimary = DarkOnPrimaryText,
-    secondary = DarkSurfaceSecondary,
+    secondary = DarkSurfaceVariant,
     onSecondary = DarkOnSecondaryText,
-    tertiary = DarkAccent,
+    tertiary = DarkSecondaryAccent,
     onTertiary = DarkOnPrimaryText,
     background = DarkBackground,
     surface = DarkSurface,
-    onSurface = DarkOnPrimaryText,
+    onSurface = DarkSurfaceSecondary,
+    surfaceVariant = DarkSurfaceVariant,
+    outline = DarkOnPrimaryText,
     error = DarkError,
     onError = DarkOnPrimaryText
 )
 
 private val LightColorScheme = lightColorScheme(
-    /*primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40*/
-    primary = SonicGreen,
-    onPrimary = SonicWhite,
-    secondary = SonicGold,
-    onSecondary = SonicBlack,
-    tertiary = SonicRed,
-    onTertiary = SonicWhite,
-    background = SonicWhite,
-    onBackground = SonicBlack,
-    surface = Color.White,
-    onSurface = SonicBlack,
-    error = SonicRed,
-    onError = SonicCream
+    primary = LightAccent,
+    onPrimary = LightOnPrimaryText,
+    secondary = LightSurfaceVariant,
+    onSecondary = LightOnSecondaryText,
+    tertiary = LightSecondaryAccent,
+    onTertiary = LightOnPrimaryText,
+    background = LightBackground,
+    onBackground = LightOnPrimaryText,
+    surface = LightSurface,
+    onSurface = LightSurfaceSecondary,
+    surfaceVariant = LightSurfaceVariant,
+    outline = LightOnPrimaryText,
+    error = LightError,
+    onError = LightOnPrimaryText
 
 
 

@@ -26,11 +26,13 @@ fun RentButton(
     text: String,
     onClick: () -> Unit
 ){
+
+    // Botón largo
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
-            .background(MaterialTheme.colorScheme.primary)
+            .background(MaterialTheme.colorScheme.tertiary)
             .clickable { onClick() }
             .padding(vertical = 16.dp),
         contentAlignment = Alignment.Center

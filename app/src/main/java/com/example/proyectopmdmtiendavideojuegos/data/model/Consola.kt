@@ -2,6 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.data.model
 
 import com.example.proyectopmdmtiendavideojuegos.R
 
+// Enumeración de consolas
 enum class Consola(val consoleName: String, val imageResId: Int) {
     NINTENDO_SWITCH(consoleName = "Nintendo Switch", imageResId = R.drawable.consola_nintendo_switch),
     PLAYSTATION_5(consoleName = "PlayStation 5", imageResId = R.drawable.consola_sony_ps5),

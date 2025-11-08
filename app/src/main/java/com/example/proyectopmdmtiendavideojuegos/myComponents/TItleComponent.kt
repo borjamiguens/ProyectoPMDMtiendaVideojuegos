@@ -3,6 +3,7 @@ package com.example.proyectopmdmtiendavideojuegos.myComponents
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
 fun Title(
@@ -46,7 +48,7 @@ fun Title(
 
         Text(
             text = name,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onSurface,
             fontWeight = FontWeight.Bold,
             fontSize = fontSize,
             modifier = modifier
@@ -60,7 +62,17 @@ fun Title(
 
 @Preview
 @Composable
-fun TextImagePreview () {
-    Title(name = "JUEGOS DESTACADOS")
+fun TextImagePreview1 () {
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
+        Title(name = "JUEGOS DESTACADOS")
+    }
+}
+
+@Preview
+@Composable
+fun TextImagePreview2 () {
+    ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false) {
+        Title(name = "JUEGOS DESTACADOS")
+    }
 }
 

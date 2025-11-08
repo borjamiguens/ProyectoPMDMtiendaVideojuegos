@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -34,6 +35,7 @@ import com.example.proyectopmdmtiendavideojuegos.data.model.Consola
 import com.example.proyectopmdmtiendavideojuegos.model.MyListItem
 import com.example.proyectopmdmtiendavideojuegos.myComponents.GameImage
 import com.example.proyectopmdmtiendavideojuegos.myComponents.RentButton
+import com.example.proyectopmdmtiendavideojuegos.ui.theme.DarkSecondaryAccent
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable
@@ -52,7 +54,8 @@ fun DetailPage(
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
+            .wrapContentHeight()
             .background(MaterialTheme.colorScheme.background)
             .padding(vertical = 25.dp)
             .verticalScroll(verticalScrollState)
@@ -64,7 +67,7 @@ fun DetailPage(
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color.White)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
                 .padding(vertical = 10.dp),
             contentAlignment = Alignment.Center
         ) {
@@ -82,7 +85,7 @@ fun DetailPage(
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color.White)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
                 .padding(vertical = 10.dp),
             contentAlignment = Alignment.Center
         ) {
@@ -90,7 +93,7 @@ fun DetailPage(
                 text = txtTitle,
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black,
+                color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center
             )
         }
@@ -103,7 +106,7 @@ fun DetailPage(
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(MaterialTheme.colorScheme.primary)
+                .background(MaterialTheme.colorScheme.tertiary)
                 .padding(vertical = 10.dp),
             contentAlignment = Alignment.Center
         ) {
@@ -124,7 +127,7 @@ fun DetailPage(
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color.White)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
                 .padding(16.dp)
         ) {
             // Categoría
@@ -132,16 +135,19 @@ fun DetailPage(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                // Título categoría
                 Text(
                     text = "Categoría:",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = MaterialTheme.colorScheme.onSurface
                 )
+
+                // Categoría
                 Text(
                     text = txtCategoria,
                     fontSize = 16.sp,
-                    color = Color.DarkGray
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
                 )
             }
 
@@ -152,16 +158,19 @@ fun DetailPage(
                     .padding(top = 8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                // Título consola
                 Text(
                     text = "Consola:",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = MaterialTheme.colorScheme.onSurface
                 )
+
+                // Listado de consolas
                 Text(
                     text = consolas.joinToString("\n") { it.consoleName },
                     fontSize = 16.sp,
-                    color = Color.DarkGray,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f),
                     textAlign = TextAlign.End,
                     modifier = Modifier.align(Alignment.CenterVertically)
                 )
@@ -174,16 +183,19 @@ fun DetailPage(
                     .padding(top = 8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                // Título unidades disponibles
                 Text(
                     text = "Unidades disponibles:",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = MaterialTheme.colorScheme.onSurface
                 )
+
+                // Unidades disponibles
                 Text(
                     text = unidadesDisponibles.toString(),
                     fontSize = 16.sp,
-                    color = Color.DarkGray
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
                 )
             }
         }
@@ -196,31 +208,36 @@ fun DetailPage(
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color.White)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
                 .padding(16.dp)
         ) {
+            // Título descripción
             Text(
                 text = "Descripción",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black
+                color = MaterialTheme.colorScheme.onSurface
             )
+
             Spacer(modifier = Modifier.height(8.dp))
+
+            // Descripción
             Text(
                 text = txtDescripcion,
                 fontSize = 16.sp,
-                color = Color.DarkGray
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
             )
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        // Botón alquilar
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 25.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color.White),
+                .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
             RentButton(

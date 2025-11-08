@@ -2,34 +2,24 @@ package com.example.proyectopmdmtiendavideojuegos.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
-
-// Modo oscuro
+// DarkColorScheme
 val DarkBackground = Color(0xFF121212)
 val DarkSurface = Color(0xFF1E1E1E)
-val DarkSurfaceSecondary = Color(0xFF303030)
+val DarkSurfaceSecondary = Color(0xFFFFFFFF)
+val DarkSurfaceVariant = Color(0xFF2C2C2C)
 val DarkOnPrimaryText = Color(0xFFE0E0E0)
 val DarkOnSecondaryText = Color(0xFFB0B0B0)
 val DarkAccent = Color(0xFF2C2C2C)
-val DarkSecondaryAccent = Color(0xFFFFC107)
+val DarkSecondaryAccent = Color(0xFFB05C1B)
 val DarkError = Color(0xFFCF6679)
-val DarkBorder = Color(0xFF333333)
 
-
-
-
-//colores al estilo Seattle Supersonics 90
-
-val SonicGreen = Color(0xFF005736)
-val SonicGold = Color(0xFFFFC72C)
-val SonicRed = Color(0xFFD50032)
-val SonicCream = Color(0xFFF5F5DC)
-val SonicBlack = Color(0xFF121212)
-val SonicDarkGrey = Color(0x94121212)
-val SonicWhite = Color(0xFFFFFFFF)
+// LightColorScheme
+val LightBackground = Color(0xFFE7E7E7)
+val LightSurface = Color(0xFF7E7E7E)
+val LightSurfaceSecondary = Color(0xFFFAFAFA)
+val LightSurfaceVariant = Color(0xFF656565)
+val LightOnPrimaryText = Color(0xFFFFFFFF)
+val LightOnSecondaryText = Color(0xFF4A4A4A)
+val LightAccent = Color(0xFFFF9800)
+val LightSecondaryAccent = Color(0xFFB05C1B)
+val LightError = Color(0xFFD32F2F)

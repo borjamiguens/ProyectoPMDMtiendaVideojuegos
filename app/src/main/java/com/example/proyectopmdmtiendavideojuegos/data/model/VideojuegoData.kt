@@ -2,6 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.data.model
 
 import com.example.proyectopmdmtiendavideojuegos.R
 
+// Listado de videojuegos simulando una BD
 object VideojuegoData {
     val listaVideojuegos = listOf(
         Videojuego(

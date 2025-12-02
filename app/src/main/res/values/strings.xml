@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">ProyectoPMDMtiendaVideojuegos</string>
+
+    <!-- LoginPage -->
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="entrar">Entrar</string>
+
+    <!-- ProfilePage -->
+    <string name="perfil_titulo">Perfil</string>
+    <string name="perfil_nombre">Perfil</string>
+    <string name="perfil_apellidos">Perfil</string>
+    <string name="perfil_direccion">Perfil</string>
+    <string name="perfil_email">Perfil</string>
+    <string name="perfil_telefono">Perfil</string>
+    <string name="perfil_usuario">Perfil</string>
+    <string name="perfil_contrasena">Perfil</string>
+
+    <!-- DetailPage -->
+    <string name="categoria">Categoría:</string>
+    <string name="consola">Consola:</string>
+    <string name="unidades_disponibles">Unidades disponibles:</string>
+    <string name="descripcion">Descripción</string>
+
+
+
+
 </resources>

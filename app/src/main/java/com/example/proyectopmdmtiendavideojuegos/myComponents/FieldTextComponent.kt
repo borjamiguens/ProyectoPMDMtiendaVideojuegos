@@ -25,7 +25,7 @@ import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVide
 
 @Composable
 fun FieldText(
-    label : String
+    label : String = ""
 ) {
     Row(
         modifier = Modifier
@@ -35,12 +35,6 @@ fun FieldText(
         verticalAlignment = Alignment.CenterVertically,
 
     ) {
-        /*Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(5.dp)
-                //.background(MaterialTheme.colorScheme.primary)
-        ) {*/
             Text(
                 modifier = Modifier
                     .padding(start = 25.dp)

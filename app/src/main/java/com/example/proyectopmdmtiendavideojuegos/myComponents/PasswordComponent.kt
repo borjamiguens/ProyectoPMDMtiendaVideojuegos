@@ -28,23 +28,26 @@ import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVide
 
 @Composable
 fun Password(
-    label : String
+    label: String = "",
+    value: String = "",
+    onValueChange: (String) -> Unit = {}
 ) {
     Row(
         modifier = Modifier
             .height(70.dp)
-            .background(MaterialTheme.colorScheme.primary,
-                shape = RoundedCornerShape(30.dp)),
-        verticalAlignment = Alignment.CenterVertically,
+            .background(
+                MaterialTheme.colorScheme.primary,
+                shape = RoundedCornerShape(30.dp)
+            ),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
 
-        ) {
-
-        //Texto exterior
+        // Texto exterior
         Text(
             modifier = Modifier
                 .padding(start = 25.dp)
-                .fillMaxWidth(.22f)
-            ,text = label,
+                .fillMaxWidth(.22f),
+            text = label,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onPrimary
@@ -56,18 +59,16 @@ fun Password(
             modifier = Modifier
                 .fillMaxHeight(.70f)
                 .fillMaxWidth()
-                .padding(end = 10.dp)
-
-            ,value = "",
-            onValueChange = {}, // sin funcionalidad
-            label = { Text(label) }, //texto interior
+                .padding(end = 10.dp),
+            value = value,
+            onValueChange = onValueChange,
+            label = { Text(label) },
             singleLine = true,
             shape = RoundedCornerShape(30.dp),
+            visualTransformation = PasswordVisualTransformation(),
             trailingIcon = {
-                IconButton(onClick = {}) { // sin acción
+                IconButton(onClick = {}) {
                     Icon(
-                        modifier = Modifier
-                            .padding(end = 10.dp),
                         painter = painterResource(R.drawable.leer),
                         contentDescription = ""
                     )
@@ -76,6 +77,7 @@ fun Password(
         )
     }
 }
+
 
 //Preview tema claro
 @Preview

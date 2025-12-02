@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.proyectopmdmtiendavideojuegos.myComponents.FieldText
 import com.example.proyectopmdmtiendavideojuegos.myComponents.ProfileField
@@ -29,13 +30,13 @@ import com.example.proyectopmdmtiendavideojuegos.R
 fun ProfilePage() {
 
     val listaInicial = listOf(
-        ProfileField("Nombre"),
-        ProfileField("Apellidos"),
-        ProfileField("Dirección"),
-        ProfileField("Email"),
-        ProfileField("Telefono"),
-        ProfileField("Usuario"),
-        ProfileField("Pass")
+        ProfileField(name = stringResource(id = R.string.perfil_nombre),
+        ProfileField(name = stringResource(id = R.string.perfil_apellidos),
+        ProfileField(name = stringResource(id = R.string.perfil_direccion),
+        ProfileField(name = stringResource(id = R.string.perfil_email),
+        ProfileField(name = stringResource(id = R.string.perfil_telefono),
+        ProfileField(name = stringResource(id = R.string.perfil_usuario),
+        ProfileField(name = stringResource(id = R.string.perfil_contrasena)
     )
 
     Box(
@@ -57,7 +58,7 @@ fun ProfilePage() {
             //Título de página
             Text(
                 modifier = Modifier,
-                text = "Perfil de usuario",
+                text = stringResource(id = R.string.perfil_titulo),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground,

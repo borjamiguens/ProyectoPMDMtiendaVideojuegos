@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -47,7 +49,8 @@ fun DetailPage(
     precio: Double,
     unidadesDisponibles: Int,
     imagenResId: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    paddingValues: PaddingValues = PaddingValues()
 ) {
 
     val verticalScrollState = rememberScrollState()
@@ -137,7 +140,7 @@ fun DetailPage(
             ) {
                 // Título categoría
                 Text(
-                    text = "Categoría:",
+                    text = stringResource(id = R.string.categoria),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -160,7 +163,7 @@ fun DetailPage(
             ) {
                 // Título consola
                 Text(
-                    text = "Consola:",
+                    text = stringResource(id = R.string.consola),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -185,7 +188,7 @@ fun DetailPage(
             ) {
                 // Título unidades disponibles
                 Text(
-                    text = "Unidades disponibles:",
+                    text = stringResource(id = R.string.unidades_disponibles),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -213,7 +216,7 @@ fun DetailPage(
         ) {
             // Título descripción
             Text(
-                text = "Descripción",
+                text = stringResource(id = R.string.descripcion),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface

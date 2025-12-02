@@ -86,7 +86,7 @@ fun ImageTextColumn(
             // Categoría
             Text(
                 text = txtCategoria,
-                fontSize = 12.sp,
+                fontSize = 15.sp,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f),
                 fontWeight = FontWeight.Medium,
                 maxLines = 1,
@@ -98,7 +98,7 @@ fun ImageTextColumn(
             // Consola
             Text(
                 text = txtConsola,
-                fontSize = 12.sp,
+                fontSize = 15.sp,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
                 fontWeight = FontWeight.Medium,
                 maxLines = 1,

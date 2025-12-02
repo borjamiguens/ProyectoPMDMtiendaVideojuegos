@@ -84,7 +84,8 @@ class MainActivity : ComponentActivity() {
                         precio = juego.precio,
                         unidadesDisponibles = juego.unidadesDisponibles,
                         imagenResId = juego.imagenResId,
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier,
+                        paddingValues = innerPadding
                     )
                 }
             }

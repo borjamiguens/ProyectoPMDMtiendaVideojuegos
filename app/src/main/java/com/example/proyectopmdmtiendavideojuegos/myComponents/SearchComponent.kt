@@ -12,8 +12,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.proyectopmdmtiendavideojuegos.R
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 
@@ -47,7 +49,7 @@ fun Search(
                     .padding(start = 10.dp),
                 value = query,
                 onValueChange = { query = it },
-                label = { Text("Buscar") },
+                label = { stringResource(id = R.string.searchcomponent_buscar) },
                 singleLine = true
             )
 
@@ -56,7 +58,7 @@ fun Search(
             // Icono lupa
             Icon(
                 imageVector = Icons.Filled.Search,
-                contentDescription = "Buscar",
+                contentDescription = "Búsqueda",
                 tint = MaterialTheme.colorScheme.onPrimary,
                 modifier = Modifier
                     .fillMaxSize()

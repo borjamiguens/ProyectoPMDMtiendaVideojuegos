@@ -2,26 +2,45 @@
     <string name="app_name">ProyectoPMDMtiendaVideojuegos</string>
 
     <!-- LoginPage -->
-    <string name="iniciar_sesion">Iniciar sesión</string>
-    <string name="usuario">Usuario</string>
-    <string name="contrasena">Contraseña</string>
-    <string name="entrar">Entrar</string>
+    <string name="loginpage_iniciar_sesion">Iniciar sesión</string>
+    <string name="loginpage_usuario">Usuario</string>
+    <string name="loginpage_contrasena">Contraseña</string>
+    <string name="loginpage_entrar">Entrar</string>
 
     <!-- ProfilePage -->
-    <string name="perfil_titulo">Perfil</string>
-    <string name="perfil_nombre">Perfil</string>
-    <string name="perfil_apellidos">Perfil</string>
-    <string name="perfil_direccion">Perfil</string>
-    <string name="perfil_email">Perfil</string>
-    <string name="perfil_telefono">Perfil</string>
-    <string name="perfil_usuario">Perfil</string>
-    <string name="perfil_contrasena">Perfil</string>
+    <string name="profilepage_titulo">Perfil</string>
+    <string name="profilepage_nombre">Nombre</string>
+    <string name="profilepage_apellidos">Apellidos</string>
+    <string name="profilepage_direccion">Dirección</string>
+    <string name="profilepage_email">Email</string>
+    <string name="profilepage_telefono">Teléfono</string>
+    <string name="profilepage_usuario">Usuario</string>
+    <string name="profilepage_contrasena">Contraseña</string>
+    <string name="profilepage_validar">Validar</string>
 
     <!-- DetailPage -->
-    <string name="categoria">Categoría:</string>
-    <string name="consola">Consola:</string>
-    <string name="unidades_disponibles">Unidades disponibles:</string>
-    <string name="descripcion">Descripción</string>
+    <string name="detailpage_categoria">Categoría:</string>
+    <string name="detailpage_consola">Consola:</string>
+    <string name="detailpage_unidades_disponibles">Unidades disponibles:</string>
+    <string name="detailpage_descripcion">Descripción</string>
+    <string name="detailpage_alquilar">Alquilar</string>
+
+    <!-- SearchComponent -->
+    <string name="searchcomponent_buscar">Buscar:</string>
+
+    <!-- Categorías -->
+    <string name="categoria_aventura">Aventura</string>
+    <string name="categoria_accion">Acción</string>
+    <string name="categoria_rpg">RPG</string>
+    <string name="categoria_deportes">Deportes</string>
+    <string name="categoria_shooter">Shooter</string>
+    <string name="categoria_terror">Terror</string>
+    <string name="categoria_plataformas">Plataformas</string>
+    <string name="categoria_simulacion">Simulación</string>
+    <string name="categoria_estrategia">Estrategia</string>
+    <string name="categoria_puzzle">Puzzle</string>
+    <string name="categoria_mmo">MMO</string>
+    <string name="categoria_carreras">Carreras</string>
 
 
 

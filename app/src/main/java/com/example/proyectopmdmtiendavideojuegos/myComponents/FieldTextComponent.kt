@@ -38,7 +38,7 @@ fun FieldText(
             Text(
                 modifier = Modifier
                     .padding(start = 25.dp)
-                    .fillMaxWidth(.22f)
+                    .fillMaxWidth(.27f)
                     //.background(MaterialTheme.colorScheme.primary),
                 ,text = label,
                 style = MaterialTheme.typography.titleMedium,

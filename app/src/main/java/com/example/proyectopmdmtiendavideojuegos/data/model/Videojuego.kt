@@ -1,7 +1,5 @@
 package com.example.proyectopmdmtiendavideojuegos.data.model
 
-import androidx.annotation.DrawableRes
-
 // Clase videojuego
 data class Videojuego(
     val id: Int = 0,

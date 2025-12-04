@@ -36,7 +36,6 @@ fun GamesRow(
         // Título
         Title(name = title)
 
-
         // Listado de videojuegos
         LazyRow(
             modifier = Modifier
@@ -47,14 +46,13 @@ fun GamesRow(
             items(gameList) { item ->
                 ImageTextColumn(
                     txtTitle = item.txtTitle,
-                    txtCategoria = item.txtCategoria,
+                    txtCategoriaResId = item.categoria,
                     txtConsola = item.txtConsola,
                     imagenResId = item.imagenResId,
                     action = { }
                 )
             }
         }
-
     }
 }
 
@@ -68,7 +66,7 @@ fun GamesRowPreview1() {
             .map { juego ->
                 ImageTextColumnData(
                     txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.categoryName,
+                    categoria = juego.categoria.nameResId,
                     txtConsola = juego.consola.random().consoleName,
                     imagenResId = juego.imagenResId,
                 )
@@ -88,7 +86,7 @@ fun GamesRowPreview2() {
             .map { juego ->
                 ImageTextColumnData(
                     txtTitle = juego.nombre,
-                    txtCategoria = juego.categoria.categoryName,
+                    categoria = juego.categoria.nameResId,
                     txtConsola = juego.consola.random().consoleName,
                     imagenResId = juego.imagenResId,
                 )

@@ -34,7 +34,7 @@ fun Login() {
             //Título de la página
             Text(
                 modifier = Modifier,
-                text = stringResource(id = R.string.iniciar_sesion),
+                text = stringResource(id = R.string.loginpage_iniciar_sesion),
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold
             )
@@ -42,11 +42,11 @@ fun Login() {
             Spacer(modifier = Modifier.height(24.dp))
 
             //Campo de usuario
-            FieldText(label = stringResource(R.string.usuario))
+            FieldText(label = stringResource(R.string.loginpage_usuario))
             Spacer(modifier = Modifier.height(16.dp))
 
             //Campo de password
-            Password(label = stringResource(id = R.string.contrasena))
+            Password(label = stringResource(id = R.string.loginpage_contrasena))
             Spacer(modifier = Modifier.height(24.dp))
 
             //Botón para introducir credenciales
@@ -55,7 +55,7 @@ fun Login() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = stringResource(id = R.string.entrar),
+                    text = stringResource(id = R.string.loginpage_entrar),
                     modifier = Modifier,
                     fontWeight = FontWeight.Bold
                 )

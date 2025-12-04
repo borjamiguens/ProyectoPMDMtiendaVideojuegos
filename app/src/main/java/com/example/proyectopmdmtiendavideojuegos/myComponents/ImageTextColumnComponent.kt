@@ -1,5 +1,6 @@
 package com.example.proyectopmdmtiendavideojuegos.myComponents
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,6 +17,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,7 +29,7 @@ import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVide
 @Composable
 fun ImageTextColumn(
     txtTitle: String,
-    txtCategoria: String,
+    @StringRes txtCategoriaResId: Int,  // ← recibe ID del string
     txtConsola: String,
     imagenResId: Int,
     modifier: Modifier = Modifier,
@@ -46,14 +48,8 @@ fun ImageTextColumn(
             .clickable { action.invoke() }
     ) {
 
-        // Primer bloque
-        Box(
-            modifier = Modifier
-                .height(150.dp)
-                .fillMaxWidth()
-        ) {
-
-            // Imagen
+        // Imagen
+        Box(modifier = Modifier.height(150.dp).fillMaxWidth()) {
             Image(
                 painter = painterResource(id = imagenResId),
                 contentDescription = txtTitle,
@@ -62,7 +58,7 @@ fun ImageTextColumn(
             )
         }
 
-        // Segundo bloque
+        // Texto
         Column(
             modifier = Modifier
                 .wrapContentHeight()
@@ -70,7 +66,6 @@ fun ImageTextColumn(
                 .padding(vertical = 12.dp, horizontal = 8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Título del videojuego
             Text(
                 text = txtTitle,
                 fontSize = 13.sp,
@@ -83,9 +78,8 @@ fun ImageTextColumn(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Categoría
             Text(
-                text = txtCategoria,
+                text = stringResource(id = txtCategoriaResId),
                 fontSize = 15.sp,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f),
                 fontWeight = FontWeight.Medium,
@@ -95,7 +89,6 @@ fun ImageTextColumn(
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            // Consola
             Text(
                 text = txtConsola,
                 fontSize = 15.sp,
@@ -108,13 +101,14 @@ fun ImageTextColumn(
     }
 }
 
+
 @Preview
 @Composable
 fun ImageTextColumnPreviewDark() {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = true) {
         ImageTextColumn(
             txtTitle = "The Legend of Zelda",
-            txtCategoria = "Aventura",
+            txtCategoriaResId = R.string.categoria_aventura,
             txtConsola = "Nintendo Switch",
             imagenResId = R.drawable.juego_fortnite
         ) { }
@@ -127,7 +121,7 @@ fun ImageTextColumnPreviewLight() {
     ProyectoPMDMtiendaVideojuegosTheme(darkTheme = false) {
         ImageTextColumn(
             txtTitle = "The Legend of Zelda",
-            txtCategoria = "Aventura",
+            txtCategoriaResId = R.string.categoria_aventura,
             txtConsola = "Nintendo Switch",
             imagenResId = R.drawable.juego_fortnite
         ) { }

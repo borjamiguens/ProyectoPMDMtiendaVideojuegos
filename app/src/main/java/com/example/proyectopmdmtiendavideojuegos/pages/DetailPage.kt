@@ -140,7 +140,7 @@ fun DetailPage(
             ) {
                 // Título categoría
                 Text(
-                    text = stringResource(id = R.string.categoria),
+                    text = stringResource(id = R.string.detailpage_categoria),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -163,7 +163,7 @@ fun DetailPage(
             ) {
                 // Título consola
                 Text(
-                    text = stringResource(id = R.string.consola),
+                    text = stringResource(id = R.string.detailpage_consola),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -188,7 +188,7 @@ fun DetailPage(
             ) {
                 // Título unidades disponibles
                 Text(
-                    text = stringResource(id = R.string.unidades_disponibles),
+                    text = stringResource(id = R.string.detailpage_unidades_disponibles),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface
@@ -216,7 +216,7 @@ fun DetailPage(
         ) {
             // Título descripción
             Text(
-                text = stringResource(id = R.string.descripcion),
+                text = stringResource(id = R.string.detailpage_descripcion),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface
@@ -243,9 +243,7 @@ fun DetailPage(
                 .background(MaterialTheme.colorScheme.tertiary),
             contentAlignment = Alignment.Center
         ) {
-            RentButton(
-                text = "Alquilar"
-            ) { }
+            RentButton(text = stringResource(id = R.string.detailpage_descripcion)) { }
         }
     }
 }

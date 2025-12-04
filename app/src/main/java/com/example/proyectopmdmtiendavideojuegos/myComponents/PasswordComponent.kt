@@ -46,7 +46,7 @@ fun Password(
         Text(
             modifier = Modifier
                 .padding(start = 25.dp)
-                .fillMaxWidth(.22f),
+                .fillMaxWidth(.27f),
             text = label,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,

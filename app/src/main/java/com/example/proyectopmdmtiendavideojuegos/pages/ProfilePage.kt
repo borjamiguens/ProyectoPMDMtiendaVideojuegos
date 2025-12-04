@@ -30,13 +30,13 @@ import com.example.proyectopmdmtiendavideojuegos.R
 fun ProfilePage() {
 
     val listaInicial = listOf(
-        ProfileField(name = stringResource(id = R.string.perfil_nombre),
-        ProfileField(name = stringResource(id = R.string.perfil_apellidos),
-        ProfileField(name = stringResource(id = R.string.perfil_direccion),
-        ProfileField(name = stringResource(id = R.string.perfil_email),
-        ProfileField(name = stringResource(id = R.string.perfil_telefono),
-        ProfileField(name = stringResource(id = R.string.perfil_usuario),
-        ProfileField(name = stringResource(id = R.string.perfil_contrasena)
+        ProfileField(name = stringResource(id = R.string.profilepage_nombre)),
+        ProfileField(name = stringResource(id = R.string.profilepage_apellidos)),
+        ProfileField(name = stringResource(id = R.string.profilepage_direccion)),
+        ProfileField(name = stringResource(id = R.string.profilepage_email)),
+        ProfileField(name = stringResource(id = R.string.profilepage_telefono)),
+        ProfileField(name = stringResource(id = R.string.profilepage_usuario)),
+        ProfileField(name = stringResource(id = R.string.profilepage_contrasena))
     )
 
     Box(
@@ -58,7 +58,7 @@ fun ProfilePage() {
             //Título de página
             Text(
                 modifier = Modifier,
-                text = stringResource(id = R.string.perfil_titulo),
+                text = stringResource(id = R.string.profilepage_titulo),
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground,
@@ -122,7 +122,7 @@ fun ProfilePage() {
                 onClick = {}
             ) {
                 Text(
-                    "Validar",
+                    text = stringResource(id = R.string.profilepage_validar),
                     modifier = Modifier,
                     color = MaterialTheme.colorScheme.onPrimary
                 )

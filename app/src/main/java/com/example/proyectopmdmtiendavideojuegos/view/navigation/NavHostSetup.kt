@@ -1,21 +1,26 @@
 package com.example.proyectopmdmtiendavideojuegos.view.navigation
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.proyectopmdmtiendavideojuegos.R
 import com.example.proyectopmdmtiendavideojuegos.data.repository.Categoria
 import com.example.proyectopmdmtiendavideojuegos.data.repository.Consola
 import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData
 import com.example.proyectopmdmtiendavideojuegos.model.MyListItem
-import com.example.proyectopmdmtiendavideojuegos.view.page.DetailPage
-import com.example.proyectopmdmtiendavideojuegos.view.page.GenericListPage
-import com.example.proyectopmdmtiendavideojuegos.view.page.Login
-import com.example.proyectopmdmtiendavideojuegos.view.page.MainPage
-import com.example.proyectopmdmtiendavideojuegos.view.page.ProfilePage
+import com.example.proyectopmdmtiendavideojuegos.pages.DetailPageVM
+import com.example.proyectopmdmtiendavideojuegos.view.page.*
+import com.example.proyectopmdmtiendavideojuegos.viewModel.vm.GenericListPageVM
+import com.example.proyectopmdmtiendavideojuegos.viewModel.vm.LoginPageVM
+import com.example.proyectopmdmtiendavideojuegos.viewModel.vm.MainPageVM
+import com.example.proyectopmdmtiendavideojuegos.viewModel.vm.ProfilePageVM
 
 @Composable
 fun AppNavHost() {
@@ -23,13 +28,20 @@ fun AppNavHost() {
 
     NavHost(navController = navController, startDestination = NavRoutes.Home.route) {
 
+        // -------------------- MainPage --------------------
         composable(NavRoutes.Home.route) {
-            MainPage { id ->
-                navController.navigate(NavRoutes.Detail.createRoute(id))
-            }
+            val vm: MainPageVM = viewModel()
+            MainPage(
+                modifier = Modifier.fillMaxSize(),
+                onJuegoClick = { id ->
+                    navController.navigate(NavRoutes.Detail.createRoute(id))
+                }
+            )
         }
 
+        // -------------------- Consolas --------------------
         composable(NavRoutes.Consolas.route) {
+            val vm: GenericListPageVM = viewModel()
             GenericListPage(
                 title = "CONSOLAS",
                 items = Consola.values().mapIndexed { index, consola ->
@@ -38,13 +50,17 @@ fun AppNavHost() {
                         imageResId = consola.imageResId,
                         id = index
                     )
-                }
-            ) { item ->
-                navController.navigate(NavRoutes.JuegosPorConsola.createRoute(item.id))
-            }
+                },
+                onItemClick = { item ->
+                    navController.navigate(NavRoutes.JuegosPorConsola.createRoute(item.id))
+                },
+                viewModel = vm
+            )
         }
 
+        // -------------------- Categorías --------------------
         composable(NavRoutes.Categorias.route) {
+            val vm: GenericListPageVM = viewModel()
             GenericListPage(
                 title = "CATEGORÍAS",
                 items = Categoria.entries.mapIndexed { index, categoria ->
@@ -53,70 +69,90 @@ fun AppNavHost() {
                         imageResId = categoria.imageResId,
                         id = index
                     )
-                }
-            ) { item ->
-                navController.navigate(NavRoutes.JuegosPorCategoria.createRoute(item.id))
-            }
+                },
+                onItemClick = { item ->
+                    navController.navigate(NavRoutes.JuegosPorCategoria.createRoute(item.id))
+                },
+                viewModel = vm
+            )
         }
 
-        composable(NavRoutes.Login.route) { Login() }
-        composable(NavRoutes.Perfil.route) { ProfilePage() }
+        // -------------------- Login --------------------
+        composable(NavRoutes.Login.route) {
+            val vm: LoginPageVM = viewModel()
+            Login()
+        }
 
+        // -------------------- Profile --------------------
+        composable(NavRoutes.Perfil.route) {
+            val vm: ProfilePageVM = viewModel()
+            ProfilePage(
+                viewModel = vm,
+                onCameraClick = { println("Abrir cámara") },
+            )
+        }
+
+        // -------------------- DetailPage --------------------
         composable(
             NavRoutes.Detail.route,
             arguments = listOf(navArgument("id") { type = NavType.IntType })
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id") ?: 0
-
+            val vm: DetailPageVM = viewModel()
             DetailPage(
-                juegoId = id
+                juegoId = id,
+                viewModel = vm
             )
         }
 
+        // -------------------- Juegos por Categoría --------------------
         composable(
             NavRoutes.JuegosPorCategoria.route,
             arguments = listOf(navArgument("categoriaId") { type = NavType.IntType })
         ) { backStackEntry ->
             val categoriaId = backStackEntry.arguments?.getInt("categoriaId") ?: 0
-            val juegosFiltrados = VideojuegoData.listaVideojuegos.filter {
-                it.categoria.ordinal == categoriaId
-            }
-
+            val vm: GenericListPageVM = viewModel()
             GenericListPage(
-                title = "JUEGOS POR CATEGORÍA",
-                items = juegosFiltrados.map { juego ->
+                title = "JUEGOS DE ${stringResource(Categoria.entries[categoriaId].nameResId)}",
+                items = VideojuegoData.listaVideojuegos.filter {
+                    it.categoria.ordinal == categoriaId
+                }.map { juego ->
                     MyListItem(
                         name = juego.nombre,
                         imageResId = juego.imagenResId,
                         id = juego.id
                     )
-                }
-            ) { item ->
-                navController.navigate(NavRoutes.Detail.createRoute(item.id))
-            }
+                },
+                onItemClick = { item ->
+                    navController.navigate(NavRoutes.Detail.createRoute(item.id))
+                },
+                viewModel = vm
+            )
         }
 
+        // -------------------- Juegos por Consola --------------------
         composable(
             NavRoutes.JuegosPorConsola.route,
             arguments = listOf(navArgument("consolaId") { type = NavType.IntType })
         ) { backStackEntry ->
             val consolaId = backStackEntry.arguments?.getInt("consolaId") ?: 0
-            val juegosFiltrados = VideojuegoData.listaVideojuegos.filter {
-                it.consola.any { c -> c.ordinal == consolaId }
-            }
-
+            val vm: GenericListPageVM = viewModel()
             GenericListPage(
-                title = "JUEGOS POR CONSOLA",
-                items = juegosFiltrados.map { juego ->
+                title = "JUEGOS DE ${Consola.values()[consolaId].consoleName}",
+                items = VideojuegoData.listaVideojuegos.filter { juego ->
+                    juego.consola.any { it.ordinal == consolaId }
+                }.map { juego ->
                     MyListItem(
                         name = juego.nombre,
                         imageResId = juego.imagenResId,
                         id = juego.id
                     )
-                }
-            ) { item ->
-                navController.navigate(NavRoutes.Detail.createRoute(item.id))
-            }
+                },
+                onItemClick = { item ->
+                    navController.navigate(NavRoutes.Detail.createRoute(item.id))
+                },
+                viewModel = vm
+            )
         }
     }
 }

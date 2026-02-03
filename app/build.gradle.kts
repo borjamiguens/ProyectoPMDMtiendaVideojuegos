@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.foundation)
     implementation(libs.androidx.compose.runtime.saveable)
+    implementation(libs.ui)
     dependencies {
         implementation(libs.androidx.core.ktx)
         implementation(libs.androidx.lifecycle.runtime.ktx)

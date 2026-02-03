@@ -22,6 +22,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.proyectopmdmtiendavideojuegos.data.repository.Categoria
 import com.example.proyectopmdmtiendavideojuegos.data.repository.Consola
 import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData
@@ -36,6 +37,7 @@ import com.example.proyectopmdmtiendavideojuegos.view.page.GenericListPage
 import com.example.proyectopmdmtiendavideojuegos.view.page.Login
 import com.example.proyectopmdmtiendavideojuegos.view.page.MainPage
 import com.example.proyectopmdmtiendavideojuegos.view.page.ProfilePage
+import com.example.proyectopmdmtiendavideojuegos.viewModel.vm.GenericListPageVM
 
 class MainActivity : ComponentActivity() {
 
@@ -44,9 +46,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-
             var isDarkMode by rememberSaveable { mutableStateOf(true) }
-
             val navController = rememberNavController()
 
             ProyectoPMDMtiendaVideojuegosTheme(darkTheme = isDarkMode) {
@@ -65,8 +65,7 @@ class MainActivity : ComponentActivity() {
                         ) {
 
                             Logo(
-                                modifier = Modifier
-                                    .padding(bottom = 15.dp),
+                                modifier = Modifier.padding(bottom = 15.dp),
                                 logo = R.drawable.imagen_prueba,
                                 name = "NOMBRE"
                             ) {
@@ -93,10 +92,7 @@ class MainActivity : ComponentActivity() {
                                 onClick = { isDarkMode = !isDarkMode }
                             ) {
                                 Icon(
-                                    imageVector = if (isDarkMode)
-                                        Icons.Default.LightMode
-                                    else
-                                        Icons.Default.DarkMode,
+                                    imageVector = if (isDarkMode) Icons.Default.LightMode else Icons.Default.DarkMode,
                                     contentDescription = "Cambiar tema",
                                     tint = Color.White
                                 )
@@ -149,25 +145,26 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     ) {
 
+                        // ---------- MainPage ----------
                         composable(NavRoutes.Home.route) {
                             MainPage { id ->
                                 navController.navigate(NavRoutes.Detail.createRoute(id))
                             }
                         }
 
+                        // ---------- DetailPage ----------
                         composable(
-                            route = NavRoutes.Detail.route,
+                            NavRoutes.Detail.route,
                             arguments = listOf(navArgument("id") { type = NavType.IntType })
                         ) { backStackEntry ->
                             val id = backStackEntry.arguments?.getInt("id") ?: 0
-                            val juego = VideojuegoData.listaVideojuegos.first { it.id == id }
-
-                            DetailPage(
-                                juegoId = id
-                            )
+                            val vm: DetailPageVM = viewModel()
+                            DetailPage(juegoId = id, viewModel = vm)
                         }
 
+                        // ---------- Categorias ----------
                         composable(NavRoutes.Categorias.route) {
+                            val vm: GenericListPageVM = viewModel()
                             GenericListPage(
                                 title = "CATEGORÍAS",
                                 items = Categoria.entries.mapIndexed { index, categoria ->
@@ -176,20 +173,22 @@ class MainActivity : ComponentActivity() {
                                         imageResId = categoria.imageResId,
                                         id = index
                                     )
-                                }
-                            ) { categoriaItem ->
-                                navController.navigate(
-                                    NavRoutes.JuegosPorCategoria.createRoute(categoriaItem.id)
-                                )
-                            }
+                                },
+                                onItemClick = { item ->
+                                    navController.navigate(NavRoutes.JuegosPorCategoria.createRoute(item.id))
+                                },
+                                viewModel = vm
+                            )
                         }
 
+                        // ---------- Juegos por Categoria ----------
                         composable(
                             NavRoutes.JuegosPorCategoria.route,
                             arguments = listOf(navArgument("categoriaId") { type = NavType.IntType })
                         ) { backStackEntry ->
                             val categoriaId = backStackEntry.arguments?.getInt("categoriaId") ?: 0
                             val categoria = Categoria.entries[categoriaId]
+                            val vm: GenericListPageVM = viewModel()
 
                             GenericListPage(
                                 title = "JUEGOS DE ${stringResource(categoria.nameResId)}",
@@ -201,36 +200,41 @@ class MainActivity : ComponentActivity() {
                                             imageResId = juego.imagenResId,
                                             id = juego.id
                                         )
-                                    }
-                            ) { juegoItem ->
-                                navController.navigate(NavRoutes.Detail.createRoute(juegoItem.id))
-                            }
+                                    },
+                                onItemClick = { item ->
+                                    navController.navigate(NavRoutes.Detail.createRoute(item.id))
+                                },
+                                viewModel = vm
+                            )
                         }
 
+                        // ---------- Consolas ----------
                         composable(NavRoutes.Consolas.route) {
+                            val vm: GenericListPageVM = viewModel()
                             GenericListPage(
                                 title = "CONSOLAS",
-                                items = Consola.values()
-                                    .mapIndexed { index, consola ->
-                                        MyListItem(
-                                            name = consola.consoleName,
-                                            imageResId = consola.imageResId,
-                                            id = index
-                                        )
-                                    }
-                            ) { consolaItem ->
-                                navController.navigate(
-                                    NavRoutes.JuegosPorConsola.createRoute(consolaItem.id)
-                                )
-                            }
+                                items = Consola.values().mapIndexed { index, consola ->
+                                    MyListItem(
+                                        name = consola.consoleName,
+                                        imageResId = consola.imageResId,
+                                        id = index
+                                    )
+                                },
+                                onItemClick = { item ->
+                                    navController.navigate(NavRoutes.JuegosPorConsola.createRoute(item.id))
+                                },
+                                viewModel = vm
+                            )
                         }
 
+                        // ---------- Juegos por Consola ----------
                         composable(
                             NavRoutes.JuegosPorConsola.route,
                             arguments = listOf(navArgument("consolaId") { type = NavType.IntType })
                         ) { backStackEntry ->
                             val consolaId = backStackEntry.arguments?.getInt("consolaId") ?: 0
-                            val consola = com.example.proyectopmdmtiendavideojuegos.data.repository.Consola.values()[consolaId]
+                            val consola = Consola.values()[consolaId]
+                            val vm: GenericListPageVM = viewModel()
 
                             GenericListPage(
                                 title = "JUEGOS DE ${consola.consoleName}",
@@ -242,16 +246,23 @@ class MainActivity : ComponentActivity() {
                                             imageResId = juego.imagenResId,
                                             id = juego.id
                                         )
-                                    }
-                            ) { juegoItem ->
-                                navController.navigate(NavRoutes.Detail.createRoute(juegoItem.id))
-                            }
+                                    },
+                                onItemClick = { item ->
+                                    navController.navigate(NavRoutes.Detail.createRoute(item.id))
+                                },
+                                viewModel = vm
+                            )
                         }
 
-                        composable(NavRoutes.Login.route) { Login() }
+                        // ---------- Login ----------
+                        composable(NavRoutes.Login.route) {
+                            Login()
+                        }
 
-                        composable(NavRoutes.Perfil.route) { ProfilePage() }
-
+                        // ---------- Perfil ----------
+                        composable(NavRoutes.Perfil.route) {
+                            ProfilePage()
+                        }
                     }
                 }
             }

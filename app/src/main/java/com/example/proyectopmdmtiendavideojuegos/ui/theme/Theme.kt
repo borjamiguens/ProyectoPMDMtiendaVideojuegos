@@ -9,11 +9,10 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.proyectopmdmtiendavideojuegos.R
-import com.example.proyectopmdmtiendavideojuegos.myComponents.ImageTextRow
+import com.example.proyectopmdmtiendavideojuegos.view.component.ImageTextRow
 
 
 /*Color primario -> botones, barras superiores, y elementos importantes.

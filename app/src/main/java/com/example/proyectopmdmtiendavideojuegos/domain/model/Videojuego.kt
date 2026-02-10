@@ -1,7 +1,7 @@
-package com.example.proyectopmdmtiendavideojuegos.model
+package com.example.proyectopmdmtiendavideojuegos.domain.model
 
-import com.example.proyectopmdmtiendavideojuegos.data.repository.Categoria
-import com.example.proyectopmdmtiendavideojuegos.data.repository.Consola
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Categoria
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Consola
 
 // Clase videojuego
 data class Videojuego(

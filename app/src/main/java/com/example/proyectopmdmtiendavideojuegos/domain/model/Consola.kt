@@ -1,4 +1,4 @@
-package com.example.proyectopmdmtiendavideojuegos.data.repository
+package com.example.proyectopmdmtiendavideojuegos.domain.model
 
 import com.example.proyectopmdmtiendavideojuegos.R
 

@@ -1,7 +1,7 @@
 package com.example.proyectopmdmtiendavideojuegos.pages
 
-import com.example.proyectopmdmtiendavideojuegos.data.repository.Consola
-import com.example.proyectopmdmtiendavideojuegos.model.Videojuego
+import com.example.proyectopmdmtiendavideojuegos.data.data.Consola
+import com.example.proyectopmdmtiendavideojuegos.data.data.model.Videojuego
 
 data class DetailPageUIState(
     val txtTitle: String = "",

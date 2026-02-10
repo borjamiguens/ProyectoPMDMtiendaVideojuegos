@@ -2,8 +2,9 @@ package com.example.proyectopmdmtiendavideojuegos.viewModel.vm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.proyectopmdmtiendavideojuegos.data.repository.ImageTextColumnData
-import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData
+import com.example.proyectopmdmtiendavideojuegos.data.data.ImageTextColumnData
+import com.example.proyectopmdmtiendavideojuegos.data.data.VideojuegoData
+import com.example.proyectopmdmtiendavideojuegos.data.data.model.Videojuego
 import com.example.proyectopmdmtiendavideojuegos.viewModel.uistate.MainPageUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -45,7 +46,7 @@ class MainPageVM : ViewModel() {
     }
 
     // Extensión para mapear Videojuego -> ImageTextColumnData
-    private fun com.example.proyectopmdmtiendavideojuegos.model.Videojuego.toImageTextColumnData(): ImageTextColumnData {
+    private fun Videojuego.toImageTextColumnData(): ImageTextColumnData {
         return ImageTextColumnData(
             id = this.id,
             txtTitle = this.nombre,

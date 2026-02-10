@@ -1,7 +1,9 @@
 package com.example.proyectopmdmtiendavideojuegos.data.repository
 
 import com.example.proyectopmdmtiendavideojuegos.R
-import com.example.proyectopmdmtiendavideojuegos.model.Videojuego
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Categoria
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Consola
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Videojuego
 
 // Listado de videojuegos simulando una BD
 object VideojuegoData {

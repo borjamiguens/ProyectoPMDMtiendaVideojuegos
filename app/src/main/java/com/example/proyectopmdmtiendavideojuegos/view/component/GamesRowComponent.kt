@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.proyectopmdmtiendavideojuegos.data.repository.ImageTextColumnData
-import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData.listaVideojuegos
+import com.example.proyectopmdmtiendavideojuegos.data.data.ImageTextColumnData
+import com.example.proyectopmdmtiendavideojuegos.data.data.VideojuegoData.listaVideojuegos
 import com.example.proyectopmdmtiendavideojuegos.ui.theme.ProyectoPMDMtiendaVideojuegosTheme
 
 @Composable

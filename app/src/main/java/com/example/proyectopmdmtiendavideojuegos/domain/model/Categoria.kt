@@ -1,4 +1,4 @@
-package com.example.proyectopmdmtiendavideojuegos.data.repository
+package com.example.proyectopmdmtiendavideojuegos.domain.model
 
 import androidx.annotation.StringRes
 import com.example.proyectopmdmtiendavideojuegos.R
@@ -19,5 +19,6 @@ enum class Categoria(
     ESTRATEGIA(R.string.categoria_estrategia, R.drawable.categoria_estrategia),
     PUZZLE(R.string.categoria_puzzle, R.drawable.categoria_puzzle),
     MMO(R.string.categoria_mmo, R.drawable.categoria_mmo),
-    CARRERAS(R.string.categoria_carreras, R.drawable.categoria_carreras)
+    CARRERAS(R.string.categoria_carreras, R.drawable.categoria_carreras),
+    OTRO(R.string.categoria_otro, R.drawable.imagen_prueba)
 }

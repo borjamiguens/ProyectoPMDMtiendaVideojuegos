@@ -23,9 +23,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.proyectopmdmtiendavideojuegos.data.repository.Categoria
-import com.example.proyectopmdmtiendavideojuegos.data.repository.Consola
-import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData
+import com.example.proyectopmdmtiendavideojuegos.domain.model.Categoria
+import com.example.proyectopmdmtiendavideojuegos.data.data.Consola
+import com.example.proyectopmdmtiendavideojuegos.data.data.VideojuegoData
 import com.example.proyectopmdmtiendavideojuegos.model.MyListItem
 import com.example.proyectopmdmtiendavideojuegos.view.component.BottomBarButton
 import com.example.proyectopmdmtiendavideojuegos.view.component.Logo

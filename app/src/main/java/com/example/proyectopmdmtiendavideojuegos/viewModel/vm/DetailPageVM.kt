@@ -2,7 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.pages
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.proyectopmdmtiendavideojuegos.data.repository.VideojuegoData
+import com.example.proyectopmdmtiendavideojuegos.data.data.VideojuegoData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.proyectopmdmtiendavideojuegos.data.repository
+package com.example.proyectopmdmtiendavideojuegos.data.model
 
 import androidx.annotation.StringRes
 

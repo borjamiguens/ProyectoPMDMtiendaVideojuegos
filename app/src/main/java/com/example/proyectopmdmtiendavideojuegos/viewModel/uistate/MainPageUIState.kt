@@ -1,6 +1,6 @@
 package com.example.proyectopmdmtiendavideojuegos.viewModel.uistate
 
-import com.example.proyectopmdmtiendavideojuegos.data.repository.ImageTextColumnData
+import com.example.proyectopmdmtiendavideojuegos.data.data.ImageTextColumnData
 
 data class MainPageUIState(
     val juegosDestacados: List<ImageTextColumnData> = emptyList(),

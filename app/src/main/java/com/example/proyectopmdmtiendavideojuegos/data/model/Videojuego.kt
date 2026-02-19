@@ -2,7 +2,7 @@ package com.example.proyectopmdmtiendavideojuegos.data.model
 
 // Clase videojuego
 data class Videojuego(
-    val id: Int = 0,
+    val id: Int = 0,//
     val nombre: String,
     val descripcion: String = "Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. Esta es la descripción del juego. ",
     val categoria: Categoria,
